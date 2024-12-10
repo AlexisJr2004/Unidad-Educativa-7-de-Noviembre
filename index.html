@@ -1,0 +1,3605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad Educativa 7 de Noviembre | Inicio</title>
+    <link rel="stylesheet" href="/static/CSS/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="icono.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<style>
+    @keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 10px rgba(59, 130, 246, 0.5), 0 0 20px rgba(59, 130, 246, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.7), 0 0 40px rgba(59, 130, 246, 0.5);
+    }
+}
+
+.light-sphere {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
+    animation: float 6s ease-in-out infinite;
+    backdrop-filter: blur(10px);
+}
+
+@keyframes subtle-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes subtleFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-subtle-float {
+    animation: subtleFloat 4s ease-in-out infinite;
+}
+
+.nav-link-hover {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link-hover::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, #3B82F6, #2563EB);
+    transition: width 0.3s ease;
+}
+
+.nav-link-hover:hover::after {
+    width: 100%;
+}
+
+@layer utilities {
+    @keyframes slide-in {
+        from {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    .animate-slide-in {
+        animation: slide-in 0.3s ease-out;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(66, 153, 225, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(66, 153, 225, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(66, 153, 225, 0);
+    }
+}
+
+#dropdownDefaultButton {
+    animation: pulse 2s infinite;
+    position: fixed;
+    bottom: 140px;
+    /* Movido más arriba */
+    left: 32px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#dropdown {
+    position: fixed;
+    bottom: 200px;
+    /* Posicionado encima del botón */
+    left: 32px;
+    transform: translateY(10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease, opacity 0s ease, visibility 0.3s;
+}
+
+#dropdown.show {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+@keyframes slide-in-bottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-out-bottom {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+.custom-rounded {
+    border-bottom-left-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+  }
+
+  .path-0 {
+    animation: pathAnim-0 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes pathAnim-0 {
+    0% {
+      d: path("M 0,500 C 0,500 0,166 0,166 C 107.2153110047847,190.9665071770335 214.4306220095694,215.93301435406698 317,210 C 419.5693779904306,204.06698564593302 517.4928229665072,167.23444976076556 606,157 C 694.5071770334928,146.76555023923444 773.598086124402,163.12918660287082 866,164 C 958.401913875598,164.87081339712918 1064.1148325358852,150.2488038277512 1162,148 C 1259.8851674641148,145.7511961722488 1349.9425837320573,155.8755980861244 1440,166 C 1440,166 1440,500 1440,500 Z");
+    }
+    25% {
+      d: path("M 0,500 C 0,500 0,166 0,166 C 96.3732057416268,163.07177033492823 192.7464114832536,160.14354066985646 289,171 C 385.2535885167464,181.85645933014354 481.38755980861254,206.4976076555024 570,219 C 658.6124401913875,231.5023923444976 739.7033492822965,231.86602870813397 840,204 C 940.2966507177035,176.13397129186603 1059.799043062201,120.03827751196172 1163,109 C 1266.200956937799,97.96172248803828 1353.1004784688994,131.98086124401914 1440,166 C 1440,166 1440,500 1440,500 Z");
+    }
+    50% {
+      d: path("M 0,500 C 0,500 0,166 0,166 C 101.93301435406698,175.21531100478467 203.86602870813397,184.43062200956936 305,186 C 406.13397129186603,187.56937799043064 506.46889952153117,181.4928229665072 611,194 C 715.5311004784688,206.5071770334928 824.2583732057416,237.59808612440193 911,226 C 997.7416267942584,214.40191387559807 1062.4976076555024,160.11483253588517 1147,143 C 1231.5023923444976,125.88516746411484 1335.751196172249,145.94258373205741 1440,166 C 1440,166 1440,500 1440,500 Z");
+    }
+    75% {
+      d: path("M 0,500 C 0,500 0,166 0,166 C 109.39712918660285,193.55023923444975 218.7942583732057,221.10047846889952 300,202 C 381.2057416267943,182.89952153110048 434.22009569377997,117.14832535885166 537,108 C 639.77990430622,98.85167464114834 792.3253588516748,146.30622009569382 899,163 C 1005.6746411483252,179.69377990430618 1066.4784688995217,165.6267942583732 1149,161 C 1231.5215311004783,156.3732057416268 1335.7607655502393,161.1866028708134 1440,166 C 1440,166 1440,500 1440,500 Z");
+    }
+    100% {
+      d: path("M 0,500 C 0,500 0,166 0,166 C 107.2153110047847,190.9665071770335 214.4306220095694,215.93301435406698 317,210 C 419.5693779904306,204.06698564593302 517.4928229665072,167.23444976076556 606,157 C 694.5071770334928,146.76555023923444 773.598086124402,163.12918660287082 866,164 C 958.401913875598,164.87081339712918 1064.1148325358852,150.2488038277512 1162,148 C 1259.8851674641148,145.7511961722488 1349.9425837320573,155.8755980861244 1440,166 C 1440,166 1440,500 1440,500 Z");
+    }
+  }
+  .path-1 {
+    animation: pathAnim-1 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  @keyframes pathAnim-1 {
+    0% {
+      d: path("M 0,500 C 0,500 0,333 0,333 C 77.34928229665073,329.6794258373206 154.69856459330146,326.3588516746412 247,319 C 339.30143540669854,311.6411483253588 446.555023923445,300.24401913875596 540,316 C 633.444976076555,331.75598086124404 713.0813397129187,374.6650717703349 820,394 C 926.9186602870813,413.3349282296651 1061.1196172248804,409.0956937799043 1169,395 C 1276.8803827751196,380.9043062200957 1358.44019138756,356.95215311004785 1440,333 C 1440,333 1440,500 1440,500 Z");
+    }
+    25% {
+      d: path("M 0,500 C 0,500 0,333 0,333 C 119.46411483253587,327.5454545454545 238.92822966507174,322.09090909090907 324,320 C 409.07177033492826,317.90909090909093 459.7511961722488,319.1818181818182 534,328 C 608.2488038277512,336.8181818181818 706.066985645933,353.1818181818182 815,347 C 923.933014354067,340.8181818181818 1043.9808612440193,312.09090909090907 1150,306 C 1256.0191387559807,299.90909090909093 1348.0095693779904,316.4545454545455 1440,333 C 1440,333 1440,500 1440,500 Z");
+    }
+    50% {
+      d: path("M 0,500 C 0,500 0,333 0,333 C 65.98086124401917,360.3875598086124 131.96172248803833,387.77511961722485 245,391 C 358.03827751196167,394.22488038277515 518.1339712918659,373.2870813397129 624,359 C 729.8660287081341,344.7129186602871 781.5023923444976,337.07655502392345 856,321 C 930.4976076555024,304.92344497607655 1027.8564593301435,280.40669856459334 1129,281 C 1230.1435406698565,281.59330143540666 1335.0717703349283,307.2966507177033 1440,333 C 1440,333 1440,500 1440,500 Z");
+    }
+    75% {
+      d: path("M 0,500 C 0,500 0,333 0,333 C 96.22009569377991,307.2105263157895 192.44019138755982,281.4210526315789 293,276 C 393.5598086124402,270.5789473684211 498.4593301435407,285.52631578947376 596,311 C 693.5406698564593,336.47368421052624 783.7224880382776,372.4736842105263 885,382 C 986.2775119617224,391.5263157894737 1098.6507177033493,374.5789473684211 1193,362 C 1287.3492822966507,349.4210526315789 1363.6746411483255,341.2105263157895 1440,333 C 1440,333 1440,500 1440,500 Z");
+    }
+    100% {
+      d: path("M 0,500 C 0,500 0,333 0,333 C 77.34928229665073,329.6794258373206 154.69856459330146,326.3588516746412 247,319 C 339.30143540669854,311.6411483253588 446.555023923445,300.24401913875596 540,316 C 633.444976076555,331.75598086124404 713.0813397129187,374.6650717703349 820,394 C 926.9186602870813,413.3349282296651 1061.1196172248804,409.0956937799043 1169,395 C 1276.8803827751196,380.9043062200957 1358.44019138756,356.95215311004785 1440,333 C 1440,333 1440,500 1440,500 Z");
+    }
+  }
+
+  @keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.animate-fade-in-right {
+    animation: fadeInRight 0.8s ease-out;
+}
+.animate-fade-in-left {
+    animation: fadeInLeft 0.8s ease-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+}
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+@keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+}
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+.animate-gradient {
+    background-size: 200% 200%;
+    animation: gradientAnimation 10s ease infinite;
+}
+.animate-shimmer {
+    background-image: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite linear;
+}
+.blur-bg {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255,255,255,0.7);
+}
+
+.gallery-item {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.gallery-item.hidden {
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+@keyframes rotate-sphere {
+    0% { 
+        transform: rotate(0deg) translateX(60px) rotate(0deg) scale(1); 
+    }
+    50% { 
+        transform: rotate(180deg) translateX(60px) rotate(-180deg) scale(1.3); 
+    }
+    100% { 
+        transform: rotate(360deg) translateX(60px) rotate(-360deg) scale(1); 
+    }
+}
+.sphere {
+    animation: rotate-sphere 3s linear infinite;
+    position: absolute;
+}
+.sphere:nth-child(2) { 
+    animation-delay: -1s; 
+}
+.sphere:nth-child(3) { 
+    animation-delay: -2s; 
+}
+.sphere:nth-child(4) { 
+    animation-delay: -0.5s; 
+}
+.sphere:nth-child(5) { 
+    animation-delay: -1.5s; 
+}
+.sphere:nth-child(6) { 
+    animation-delay: -2.5s; 
+}
+#loading-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-out, visibility 0.5s;
+}
+</style>
+<body>
+    <!-- Pantalla de Carga -->
+    <div id="loading-screen" class="fixed inset-0 bg-gray-100 flex items-center justify-center z-[9999]">
+        <div class="relative flex items-center justify-center">
+            <!-- Imagen central pequeña -->
+            <img src="static/img/icono.png" alt="Logo" class="w-16 h-16 rounded-full absolute z-10">
+
+            <!-- Contenedor de esferas -->
+            <div class="relative w-40 h-40 flex items-center justify-center">
+                <div class="sphere w-4 h-4 bg-blue-500 rounded-full"></div>
+                <div class="sphere w-4 h-4 bg-blue-500 rounded-full"></div>
+                <div class="sphere w-4 h-4 bg-blue-500 rounded-full"></div>
+                <div class="sphere w-4 h-4 bg-blue-500 rounded-full"></div>
+                <div class="sphere w-4 h-4 bg-blue-500 rounded-full"></div>
+                <div class="sphere w-4 h-4 bg-blue-500 rounded-full"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar Section -->
+    <header class="bg-white/95 backdrop-blur-lg sticky top-0 z-[1000]">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div
+                class="hidden md:flex justify-between items-center py-3 border-b border-gray-200 text-sm text-gray-600">
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-map-marker-alt text-blue-600"></i>
+                        <a target="_blank"
+                            href="https://www.google.com.ec/maps/place/Unidad+Educativa+7+De+Noviembre/@-2.4614794,-80.604479,10z/data=!4m10!1m2!2m1!1s7+de+noviembre+colegio!3m6!1s0x9032b911d895deeb:0x736513f65031d054!8m2!3d-2.6802354!4d-79.6150935!15sChY3IGRlIG5vdmllbWJyZSBjb2xlZ2lvkgEGc2Nob29s4AEA!16s%2Fg%2F11bw5mf188?hl=es&entry=ttu&g_ep=EgoyMDI0MTIwMy4wIKXMDSoASAFQAw%3D%3D"
+                            class="text-gray-700 hover:text-blue-500 transition duration-300">
+                            Naranjal, Ecuador
+                        </a>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-envelope text-blue-600"></i>
+                        <a href="mailto:unidad.educativa7noviembre@edu.ec"
+                            class="text-gray-700 hover:text-blue-600 transition duration-300">
+                            unidad.educativa7noviembre@edu.ec
+                        </a>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-calendar-alt text-blue-600"></i>
+                        <a href="#" class="text-gray-700 hover:text-blue-600 transition duration-300">
+                            Periodo Académico 2025 - 2026
+                        </a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="relative flex items-center space-x-2 group">
+                        <!-- Pantalla Completa -->
+                        <button id="fullscreen-toggle"
+                            class="text-gray-600 hover:text-blue-700 transition duration-300 p-2 rounded-full hover:bg-blue-50 focus:outline-none">
+                            <i id="fullscreen-icon" class="fas fa-expand"></i>
+                        </button>
+
+                        <!-- Tooltip -->
+                        <div
+                            class="absolute top-full mt-2 left-1/2 transform -translate-x-1/2 px-4 py-2 text-white bg-blue-600 text-sm rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                            Activar pantalla completa
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fas fa-search text-gray-400"></i>
+                        </div>
+                        <input type="search" placeholder="Buscar en el sitio..."
+                            class="pl-10 pr-4 py-2 text-sm text-gray-900 border-none bg-gray-100 rounded-full focus:ring-2 focus:ring-blue-500 focus:outline-none transition duration-300" />
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <a href="https://www.facebook.com/unidadeducativa.sietedenoviembre" target="_blank"
+                            class="text-gray-600 hover:text-blue-700 transition duration-300 p-2 rounded-full hover:bg-blue-50">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.facebook.com/unidadeducativa.sietedenoviembre"
+                            class="text-sm text-white bg-blue-600 hover:bg-blue-700 transition duration-300 px-4 py-2 rounded-full shadow-md hover:shadow-lg">
+                            Únete a nuestra comunidad de Facebook
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Navigation -->
+            <div class="flex items-center justify-between py-4">
+                <div class="flex items-center space-x-5">
+                    <img src="static/img/icono.png"
+                        class="h-14 w-14 object-contain rounded-full shadow-md transform transition hover:scale-110"
+                        alt="Logotipo de la Escuela" />
+                    <div>
+                        <h1 class="text-2xl font-extrabold text-blue-800 tracking-tight leading-tight">
+                            Unidad Educativa 7 de Noviembre
+                        </h1>
+                        <p class="text-sm text-gray-500 -mt-1">Formando Futuros, Construyendo Sueños</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-6 text-sm font-semibold text-gray-700">
+                    <a href="index.html"
+                        class="nav-link-hover px-3 py-2 rounded-md hover:text-blue-700 transition duration-300">
+                        Inicio
+                    </a>
+                    <div class="relative group">
+                        <!-- Enlace principal -->
+                        <a href="#especialidades"
+                            class="nav-link-hover px-4 py-2 rounded-md hover:text-blue-700 transition duration-300 flex items-center font-medium text-gray-800">
+                            Especialidades Disponibles
+                            <i class="fas fa-chevron-down ml-2 text-sm"></i>
+                        </a>
+
+                        <!-- Menú desplegable -->
+                        <div
+                            class="absolute left-0 mt-2 w-60 bg-white shadow-lg rounded-lg border border-gray-200 z-50 dropdown-menu opacity-0 invisible group-hover:opacity-100 group-hover:visible transform group-hover:translate-y-2 transition-all duration-300 ease-in-out">
+                            <a href="#especialidades"
+                                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition duration-300 rounded-t-lg">
+                                Técnico Informático
+                            </a>
+                            <a href="#especialidades"
+                                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition duration-300">
+                                Turismo
+                            </a>
+                            <a href="#especialidades"
+                                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition duration-300">
+                                Contabilidad
+                            </a>
+                            <a href="#especialidades"
+                                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition duration-300 rounded-b-lg">
+                                Ciencias Sociales
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="relative group">
+                        <!-- Enlace principal -->
+                        <a href="#actividades"
+                            class="nav-link-hover px-4 py-2 rounded-md hover:text-blue-700 transition duration-300 flex items-center font-medium text-gray-800">
+                            Actividades Institucionales
+                            <i class="fas fa-chevron-down ml-2 text-sm"></i>
+                        </a>
+
+                        <!-- Menú desplegable -->
+                        <div
+                            class="absolute left-0 mt-2 w-60 bg-white shadow-lg rounded-lg border border-gray-200 z-50 dropdown-menu opacity-0 invisible group-hover:opacity-100 group-hover:visible transform group-hover:translate-y-2 transition-all duration-300 ease-in-out">
+                            <a href="#actividades"
+                                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition duration-300 rounded-t-lg">
+                                Inauguración de los Juegos Internos
+                            </a>
+                            <a href="#actividades"
+                                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition duration-300">
+                                Juramento de la Bandera
+                            </a>
+                            <a href="#galeria"
+                                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition duration-300 rounded-b-lg">
+                                Galería de Fotos
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="#contactos"
+                        class="nav-link-hover px-3 py-2 rounded-md hover:text-blue-700 transition duration-300">
+                        Contactos
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-toggle" class="md:hidden text-gray-600 hover:text-blue-700 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="12" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <aside
+            class="hidden fixed left-0 top-0 z-50 h-screen w-70 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md rounded-r-3xl border-r border-gray-100 dark:border-gray-800"
+            id="mobile-menu">
+            <div class="p-4 mb-6">
+                <div class="flex items-center mb-3">
+                    <div class="relative">
+                        <img src="static/img/icono.png" alt="Unidad Educativa 7 de Noviembre"
+                            class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 object-cover" />
+                    </div>
+                    <div class="ml-3">
+                        <h2 class="text-sm font-medium text-gray-900 dark:text-white">7 de Noviembre</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6" onclick="closeMobileMenu()">
+                <p class="px-3 mb-3 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">Inicio</p>
+                <ul class="space-y-1">
+                    <li>
+                        <a href="index.html"
+                            class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 dark:text-gray-100 rounded-lg group transition-colors hover:bg-gray-100 dark:hover:bg-gray-800">
+                            <i
+                                class="fas fa-home w-5 h-5 text-gray-500 dark:text-gray-400 mr-3 group-hover:text-blue-600"></i>
+                            Inicio
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="mb-6">
+                <p class="px-3 mb-3 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">Especialidades</p>
+                <ul class="space-y-1">
+                    <li>
+                        <a href="#especialidades"
+                            class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 dark:text-gray-100 rounded-lg group transition-colors hover:bg-gray-100 dark:hover:bg-gray-800">
+                            <i
+                                class="fas fa-laptop w-5 h-5 text-gray-500 dark:text-gray-400 mr-3 group-hover:text-blue-600"></i>
+                            Técnico Informático
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#especialidades"
+                            class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 dark:text-gray-100 rounded-lg group transition-colors hover:bg-gray-100 dark:hover:bg-gray-800">
+                            <i
+                                class="fas fa-globe w-5 h-5 text-gray-500 dark:text-gray-400 mr-3 group-hover:text-blue-600"></i>
+                            Turismo
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#especialidades"
+                            class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 dark:text-gray-100 rounded-lg group transition-colors hover:bg-gray-100 dark:hover:bg-gray-800">
+                            <i
+                                class="fas fa-calculator w-5 h-5 text-gray-500 dark:text-gray-400 mr-3 group-hover:text-blue-600"></i>
+                            Contabilidad
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#especialidades"
+                            class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 dark:text-gray-100 rounded-lg group transition-colors hover:bg-gray-100 dark:hover:bg-gray-800">
+                            <i
+                                class="fas fa-university w-5 h-5 text-gray-500 dark:text-gray-400 mr-3 group-hover:text-blue-600"></i>
+                            Ciencias Sociales
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="mb-6">
+                <p class="px-3 mb-3 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">Actividades</p>
+                <ul class="space-y-1">
+                    <li>
+                        <a href="#actividades"
+                            class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 dark:text-gray-100 rounded-lg group transition-colors hover:bg-gray-100 dark:hover:bg-gray-800">
+                            <i
+                                class="fas fa-calendar-alt w-5 h-5 text-gray-500 dark:text-gray-400 mr-3 group-hover:text-blue-600"></i>
+                            Inauguración Juegos Internos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#actividades"
+                            class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 dark:text-gray-100 rounded-lg group transition-colors hover:bg-gray-100 dark:hover:bg-gray-800">
+                            <i
+                                class="fas fa-flag w-5 h-5 text-gray-500 dark:text-gray-400 mr-3 group-hover:text-blue-600"></i>
+                            Juramento de Bandera
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#galeria"
+                            class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 dark:text-gray-100 rounded-lg group transition-colors hover:bg-gray-100 dark:hover:bg-gray-800">
+                            <i
+                                class="fas fa-images w-5 h-5 text-gray-500 dark:text-gray-400 mr-3 group-hover:text-blue-600"></i>
+                            Galería de Fotos
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="mb-6">
+                <p class="px-3 mb-3 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">Contacto</p>
+                <ul class="space-y-1">
+                    <li>
+                        <a href="#contactos"
+                            class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 dark:text-gray-100 rounded-lg group transition-colors hover:bg-gray-100 dark:hover:bg-gray-800">
+                            <i
+                                class="fas fa-envelope w-5 h-5 text-gray-500 dark:text-gray-400 mr-3 group-hover:text-blue-600"></i>
+                            Contactos
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="p-4">
+                <a href="https://www.facebook.com/unidadeducativa.sietedenoviembre"
+                    class="block w-full text-center py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition duration-300 shadow-md">
+                    Ccomunidad de Facebook
+                </a>
+            </div>
+        </aside>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+        class="container mx-auto px-6 py-16 relative overflow-hidden dark:bg-black before:absolute before:top-0 before:start-1/2 before:bg-[url('https://preline.co/assets/svg/examples/polygon-bg-element.svg')] dark:before:bg-[url('https://preline.co/assets/svg/examples-dark/polygon-bg-element.svg')] before:bg-no-repeat before:bg-top before:bg-cover before:size-full before:-z-[1] before:transform before:-translate-x-1/2">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <!-- Columna de Contenido -->
+            <div class="animate-fade-in-right">
+                <div class="mb-6 flex items-center space-x-4">
+                    <span class="bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium">
+                        Educación de Excelencia
+                    </span>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                    Formando Líderes del
+                    <span class="block text-blue-600 mt-2">Futuro Brillante</span>
+                </h1>
+
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                    Inspiramos, educamos y empoderamos a estudiantes para alcanzar su máximo potencial en un ambiente de
+                    aprendizaje innovador y comprometido.
+                </p>
+
+                <div class="flex space-x-4">
+                    <a href="inscripciones.html"
+                        class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition-colors transform hover:scale-105 duration-300">
+                        <i class="fas fa-file-invoice mr-2"></i> Inscripciones Abiertas 2025
+                    </a>
+                    <a href="#especialidades"
+                        class="bg-gray-100 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-200 transition-colors transform hover:scale-105 duration-300">
+                        <i class="fas fa-info-circle mr-2"></i> Conocer Más
+                    </a>
+                </div>
+            </div>
+
+            <!-- Columna de Imagen -->
+            <div class="hidden md:block relative">
+                <div class="relative overflow-hidden rounded-3xl shadow-2xl group perspective-1000">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-purple-500/30 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500 z-10">
+                    </div>
+
+                    <img src="https://scontent.fgye15-1.fna.fbcdn.net/v/t1.6435-9/68453456_739388129841125_5527993204852391936_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=FH2V4kthkv8Q7kNvgEwlCrD&_nc_zt=23&_nc_ht=scontent.fgye15-1.fna&_nc_gid=AkPLw-dfX4aLvqO6telzOTG&oh=00_AYCEZOxwiw0-IujmLEdEJrR8jdXf2E6h3lbMJMvRTsEX_g&oe=67798D0D"
+                        alt="Estudiantes de la Unidad Educativa"
+                        class="relative z-20 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 rounded-3xl transform-gpu hover:rotate-1 hover:shadow-2xl">
+
+                    <div
+                        class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent h-1/2 rounded-b-3xl z-30">
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Estudiantes -->
+                <div class="absolute -bottom-8 -left-8 blur-bg shadow-2xl rounded-2xl p-6 animate-float z-40">
+                    <div class="flex items-center">
+                        <div class="bg-blue-100/50 backdrop-blur-sm text-blue-600 p-3 rounded-xl mr-4">
+                            <i class="fas fa-users text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-800">+1000</h3>
+                            <p class="text-sm text-gray-600 uppercase tracking-wider">Estudiantes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Profesores -->
+                <div class="absolute -top-8 -right-8 blur-bg shadow-2xl rounded-2xl p-6 animate-float z-40">
+                    <div class="flex items-center">
+                        <div class="bg-green-100/50 backdrop-blur-sm text-green-600 p-3 rounded-xl mr-4">
+                            <i class="fas fa-chalkboard-teacher text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-800">40</h3>
+                            <p class="text-sm text-gray-600 uppercase tracking-wider">Profesores</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seccion de Informacion -->
+    <div class="container mx-auto px-4 py-10">
+        <h1 class="text-3xl font-extrabold text-center mb-10 text-gray-800 dark:text-neutral-200">
+            Panel de <span class="text-blue-600">Estadísticas Educativas</span>
+        </h1>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Estudiantes Card -->
+            <div
+                class="bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-2 overflow-hidden">
+                <div class="p-5 flex items-center justify-between">
+                    <div class="space-y-2">
+                        <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-neutral-400">
+                            Total de Estudiantes
+                        </p>
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-neutral-200">
+                            + 1,000
+                        </h3>
+                    </div>
+                    <div class="p-3 rounded-full bg-blue-100 text-blue-600 animate-pulse">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="h-1 w-full bg-gradient-to-r from-blue-500 to-purple-600 opacity-75"></div>
+            </div>
+
+            <!-- Clases Card -->
+            <div
+                class="bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-2 overflow-hidden">
+                <div class="p-5 flex items-center justify-between">
+                    <div class="space-y-2">
+                        <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-neutral-400">
+                            Horas de Clases Diarias
+                        </p>
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-neutral-200">
+                            6
+                        </h3>
+                    </div>
+                    <div class="p-3 rounded-full bg-green-100 text-green-600 animate-pulse">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 22h14" />
+                            <path d="M5 2h14" />
+                            <path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22" />
+                            <path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="h-1 w-full bg-gradient-to-r from-green-500 to-teal-600 opacity-75"></div>
+            </div>
+
+            <!-- Profesores Card -->
+            <div
+                class="bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-2 overflow-hidden">
+                <div class="p-5 flex items-center justify-between">
+                    <div class="space-y-2">
+                        <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-neutral-400">
+                            Total de Profesores
+                        </p>
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-neutral-200">
+                            40
+                        </h3>
+                    </div>
+                    <div class="p-3 rounded-full bg-purple-100 text-purple-600 animate-pulse">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="h-1 w-full bg-gradient-to-r from-purple-500 to-indigo-600 opacity-75"></div>
+            </div>
+
+            <!-- Asistencias Card -->
+            <div
+                class="bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-2 overflow-hidden">
+                <div class="p-5 flex items-center justify-between">
+                    <div class="space-y-2">
+                        <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-neutral-400">
+                            Asistencias Promedio
+                        </p>
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-neutral-200">
+                            95%
+                        </h3>
+                    </div>
+                    <div class="p-3 rounded-full bg-orange-100 text-orange-600 animate-pulse">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="h-1 w-full bg-gradient-to-r from-orange-500 to-red-600 opacity-75"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seccion de Autoridades -->
+    <section class="py-16">
+        <div id="autoridades" class="container mx-auto max-w-7xl px-4">
+            <div class="text-center mb-12">
+                <div
+                    class="inline-block rounded-full bg-gray-100/80 dark:bg-gray-800/80 backdrop-blur-sm px-4 py-1.5 text-sm font-semibold dark:text-gray-200 mb-4">
+                    🎖️ Autoridades
+                </div>
+                <h2
+                    class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-800 to-gray-600 dark:from-gray-200 dark:to-gray-400 bg-clip-text text-transparent">
+                    Nuestras <span class="text-blue-600">Autoridades</span>
+                </h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-xl mx-auto mb-6">
+                    Un equipo de liderazgo comprometido con la excelencia educativa y el desarrollo integral de nuestros
+                    estudiantes.
+                </p>
+
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Rector -->
+                <div
+                    class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 text-center transform transition-all duration-300 hover:scale-105">
+                    <div class="mb-4 flex justify-center">
+                        <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-500 shadow-md">
+                            <img src="static/img/rectora.jpeg" alt="Rector" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">
+                        Aguilar Morejón Edith Teresa
+                    </h3>
+                    <p class="text-blue-600 font-medium mb-4">
+                        Rectora
+                    </p>
+                    <div class="flex justify-center space-x-4 text-gray-500">
+                        <a href="#" class="hover:text-blue-600 transition-colors">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-blue-600 transition-colors">
+                            <i class="fas fa-envelope text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Vicerrector -->
+                <div
+                    class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 text-center transform transition-all duration-300 hover:scale-105">
+                    <div class="mb-4 flex justify-center">
+                        <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-green-500 shadow-md">
+                            <img src="static/img/vicerrector.jpeg" alt="Vicerrector" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">
+                        Román Escobedo Cristhian Manuel
+                    </h3>
+                    <p class="text-green-600 font-medium mb-4">
+                        Vicerrector (Vespertina)
+                    </p>
+                    <div class="flex justify-center space-x-4 text-gray-500">
+                        <a href="#" class="hover:text-green-600 transition-colors">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-green-600 transition-colors">
+                            <i class="fas fa-envelope text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Maestra de Inglés -->
+                <div
+                    class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 text-center transform transition-all duration-300 hover:scale-105">
+                    <div class="mb-4 flex justify-center">
+                        <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-purple-500 shadow-md">
+                            <img src="static/img/maestra_ingles.jpeg" alt="Inspector General"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">
+                        García Peralta Jessica Aracelly
+                    </h3>
+                    <p class="text-purple-600 font-medium mb-4">
+                        Maestra de Inglés (Contrato)
+                    </p>
+                    <div class="flex justify-center space-x-4 text-gray-500">
+                        <a href="#" class="hover:text-purple-600 transition-colors">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-purple-600 transition-colors">
+                            <i class="fas fa-envelope text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Download Button - Now centered and spanning full grid width -->
+            <div class="grid md:grid-cols-3 gap-8 mt-8">
+                <a href="static/archivos/4. NOMINA DE DOCENTES U.E. SIETE DE NOVIEMBRE.xlsx" download
+                    class="md:col-span-3 flex items-center justify-center mx-auto bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                    <i class="fas fa-file-excel mr-2"></i> <!-- Ícono de Excel -->
+                    Descargar Listado de Maestros
+                </a>
+
+                <a href="static/archivos/NORMAS DISCIPLINARIAS Y DE CONVIVENCIA.docx" download
+                    class="md:col-span-3 flex items-center justify-center mx-auto bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                    <i class="fas fa-file-word mr-2"></i> <!-- Ícono de Word -->
+                    Descargar Archivo de nuestras normas disciplinarias de convivencia
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Información de Especialidaded -->
+    <section
+        class="relative overflow-hidden dark:bg-black before:absolute before:top-0 before:start-1/2 before:bg-[url('https://preline.co/assets/svg/examples/polygon-bg-element.svg')] dark:before:bg-[url('https://preline.co/assets/svg/examples-dark/polygon-bg-element.svg')] before:bg-no-repeat before:bg-top before:bg-cover before:size-full before:-z-[1] before:transform before:-translate-x-1/2">
+
+        <div id="especialidades" class="relative mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24">
+            <div class="flex flex-col items-center">
+                <div
+                    class="mb-6 inline-block rounded-full bg-gray-100/80 dark:bg-gray-800/80 backdrop-blur-sm px-4 py-1.5 text-sm font-semibold dark:text-gray-200">
+                    🎓 Nuestras Especialidades Académicas
+                </div>
+
+                <h2
+                    class="text-center text-3xl font-bold md:text-5xl bg-gradient-to-r from-gray-800 to-gray-600 dark:from-gray-200 dark:to-gray-400 bg-clip-text text-transparent">
+                    Descubre nuestras<span class="text-blue-600"> Especialidades Académicas</span>
+                </h2>
+
+                <p class="mb-8 mt-4 text-center text-base text-gray-600 dark:text-gray-400 max-w-xl">
+                    Formamos profesionales con competencias técnicas y humanas para enfrentar los desafíos del mundo
+                    moderno.
+                </p>
+
+                <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-4 w-full mb-12">
+                    <!-- Técnico Informático -->
+                    <div class="card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-md">
+                        <div class="relative overflow-hidden">
+                            <img src="static/img/especialidad_1.jpeg"
+                                alt="Técnico Informático"
+                                class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="absolute bottom-4 left-4 right-4">
+                                    <span class="text-white text-sm font-medium px-3 py-1 rounded-full bg-blue-600/80">
+                                        Tecnología
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="tag text-sm font-semibold dark:text-gray-200">3 AÑOS</span>
+                                <span class="h-1 w-1 rounded-full bg-gray-300 dark:bg-gray-600"></span>
+                                <span class="text-sm text-gray-500 dark:text-gray-400">Formación</span>
+                            </div>
+
+                            <h3 class="mb-4 text-xl font-bold text-gray-900 dark:text-gray-100">Técnico Informático</h3>
+                            <p class="mb-6 text-base text-gray-600 dark:text-gray-400">
+                                Formación en tecnologías de información y programación.
+                            </p>
+
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Coordinador"
+                                        class="w-8 h-8 rounded-full border-2 border-white dark:border-gray-700 shadow-sm" />
+                                    <div>
+                                        <p class="text-sm font-medium text-gray-900 dark:text-gray-100">Prof. Rodríguez
+                                        </p>
+                                        <p class="text-xs text-gray-500 dark:text-gray-400">Coordinador TI</p>
+                                    </div>
+                                </div>
+                                <!-- <button onclick="openModal('informatica')"
+                                    class="text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 font-medium text-sm">
+                                    Ver Detalles →
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Turismo -->
+                    <div class="card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-md">
+                        <div class="relative overflow-hidden">
+                            <img src="static/img/viaje_1.jpeg"
+                                alt="Turismo"
+                                class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="absolute bottom-4 left-4 right-4">
+                                    <span class="text-white text-sm font-medium px-3 py-1 rounded-full bg-green-600/80">
+                                        Servicios
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="tag text-sm font-semibold dark:text-gray-200">3 AÑOS</span>
+                                <span class="h-1 w-1 rounded-full bg-gray-300 dark:bg-gray-600"></span>
+                                <span class="text-sm text-gray-500 dark:text-gray-400">Formación</span>
+                            </div>
+
+                            <h3 class="mb-4 text-xl font-bold text-gray-900 dark:text-gray-100">Turismo</h3>
+                            <p class="mb-6 text-base text-gray-600 dark:text-gray-400">
+                                Orientado a servicios turísticos y hospitalarios.
+                            </p>
+
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Coordinadora"
+                                        class="w-8 h-8 rounded-full border-2 border-white dark:border-gray-700 shadow-sm" />
+                                    <div>
+                                        <p class="text-sm font-medium text-gray-900 dark:text-gray-100">Prof. Martínez
+                                        </p>
+                                        <p class="text-xs text-gray-500 dark:text-gray-400">Especialista</p>
+                                    </div>
+                                </div>
+                                <!-- <button onclick="openModal('turismo')"
+                                    class="text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 font-medium text-sm">
+                                    Ver Detalles →
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contabilidad -->
+                    <div class="card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-md">
+                        <div class="relative overflow-hidden">
+                            <img src="static/img/especialidad_3.jpeg"
+                                alt="Contabilidad"
+                                class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="absolute bottom-4 left-4 right-4">
+                                    <span
+                                        class="text-white text-sm font-medium px-3 py-1 rounded-full bg-purple-600/80">
+                                        Finanzas
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="tag text-sm font-semibold dark:text-gray-200">3 AÑOS</span>
+                                <span class="h-1 w-1 rounded-full bg-gray-300 dark:bg-gray-600"></span>
+                                <span class="text-sm text-gray-500 dark:text-gray-400">Formación</span>
+                            </div>
+
+                            <h3 class="mb-4 text-xl font-bold text-gray-900 dark:text-gray-100">Contabilidad</h3>
+                            <p class="mb-6 text-base text-gray-600 dark:text-gray-400">
+                                Formación en gestión financiera y administrativa.
+                            </p>
+
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Coordinador"
+                                        class="w-8 h-8 rounded-full border-2 border-white dark:border-gray-700 shadow-sm" />
+                                    <div>
+                                        <p class="text-sm font-medium text-gray-900 dark:text-gray-100">Prof. García</p>
+                                        <p class="text-xs text-gray-500 dark:text-gray-400">Contador</p>
+                                    </div>
+                                </div>
+                                <!-- <button onclick="openModal('contabilidad')"
+                                    class="text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 font-medium text-sm">
+                                    Ver Detalles →
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ciencias Sociales -->
+                    <div class="card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-md">
+                        <div class="relative overflow-hidden">
+                            <img src="static/img/especialidad_2.jpeg"
+                                class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="absolute bottom-4 left-4 right-4">
+                                    <span class="text-white text-sm font-medium px-3 py-1 rounded-full bg-red-600/80">
+                                        Humanidades
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="tag text-sm font-semibold dark:text-gray-200">3 AÑOS</span>
+                                <span class="h-1 w-1 rounded-full bg-gray-300 dark:bg-gray-600"></span>
+                                <span class="text-sm text-gray-500 dark:text-gray-400">Formación</span>
+                            </div>
+
+                            <h3 class="mb-4 text-xl font-bold text-gray-900 dark:text-gray-100">Ciencias Sociales</h3>
+                            <p class="mb-6 text-base text-gray-600 dark:text-gray-400">
+                                Formación humanística y social con enfoque crítico e investigativo.
+                            </p>
+
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Coordinadora"
+                                        class="w-8 h-8 rounded-full border-2 border-white dark:border-gray-700 shadow-sm" />
+                                    <div>
+                                        <p class="text-sm font-medium text-gray-900 dark:text-gray-100">Prof. Sánchez
+                                        </p>
+                                        <p class="text-xs text-gray-500 dark:text-gray-400">Investigadora</p>
+                                    </div>
+                                </div>
+                                <!-- <button onclick="openModal('ciencias-sociales')"
+                                    class="text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 font-medium text-sm">
+                                    Ver Detalles →
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Información de Actividades institucionales -->
+    <section
+        class="relative overflow-hidden dark:bg-black before:content-[''] before:absolute before:inset-0 before:bg-[url('https://tu-nueva-imagen-dark-url.svg')] dark:before:bg-[url('https://tu-nueva-imagen-dark-url.svg')] before:bg-no-repeat before:bg-cover before:opacity-50">
+        <!-- Decorative blurred circles -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div
+                class="absolute -top-32 -left-32 w-96 h-96 bg-indigo-200 dark:bg-indigo-900 rounded-full mix-blend-multiply filter blur-3xl opacity-30">
+            </div>
+            <div
+                class="absolute top-32 -right-32 w-96 h-96 bg-red-200 dark:bg-red-900 rounded-full mix-blend-multiply filter blur-3xl opacity-30">
+            </div>
+        </div>
+
+        <div id="actividades" class="relative mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24">
+            <div class="flex flex-col items-center">
+                <div
+                    class="mb-6 inline-block rounded-full bg-gray-100/80 dark:bg-gray-800/80 backdrop-blur-sm px-4 py-1.5 text-sm font-semibold dark:text-gray-200">
+                    🏆 Actividades Institucionales
+                </div>
+
+                <h2
+                    class="text-center text-3xl font-bold md:text-5xl bg-gradient-to-r from-gray-800 to-gray-600 dark:from-gray-200 dark:to-gray-400 bg-clip-text text-transparent">
+                    Eventos que <span class="text-blue-600"> Nos Definen</span>
+
+                </h2>
+
+                <p class="mb-8 mt-4 text-center text-base text-gray-600 dark:text-gray-400 max-w-xl">
+                    Momentos que forjan el espíritu de nuestra institución, promoviendo valores, integración y
+                    desarrollo.
+                </p>
+
+                <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-2 w-full mb-12">
+                    <!-- Inauguración de Juegos Internos -->
+                    <div class="card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-md">
+                        <div class="relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b"
+                                alt="Juegos Internos"
+                                class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="absolute bottom-4 left-4 right-4">
+                                    <span class="text-white text-sm font-medium px-3 py-1 rounded-full bg-green-600/80">
+                                        Deportivo
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="tag text-sm font-semibold dark:text-gray-200">INTEGRACIÓN</span>
+                                <span class="h-1 w-1 rounded-full bg-gray-300 dark:bg-gray-600"></span>
+                                <span class="text-sm text-gray-500 dark:text-gray-400">Anual</span>
+                            </div>
+
+                            <h3 class="mb-4 text-xl font-bold text-gray-900 dark:text-gray-100">Inauguración Juegos
+                                Internos</h3>
+                            <p class="mb-6 text-base text-gray-600 dark:text-gray-400">
+                                Fomenta la integración y el espíritu deportivo entre estudiantes.
+                            </p>
+
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <img src="https://randomuser.me/api/portraits/men/22.jpg"
+                                        alt="Coordinador Deportivo"
+                                        class="w-8 h-8 rounded-full border-2 border-white dark:border-gray-700 shadow-sm" />
+                                    <div>
+                                        <p class="text-sm font-medium text-gray-900 dark:text-gray-100">Prof. Sánchez
+                                        </p>
+                                        <p class="text-xs text-gray-500 dark:text-gray-400">Coordinador Deportivo</p>
+                                    </div>
+                                </div>
+                                <!-- <button onclick="openModal('juegosinternos')"
+                                    class="text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 font-medium text-sm">
+                                    Ver Detalles →
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Juramento de la Bandera -->
+                    <div class="card group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-md">
+                        <div class="relative overflow-hidden">
+                            <img src="https://www.cristorey.edu.ec/wp-content/uploads/2022/09/Image00001-1-1077x675.jpg"
+                                alt="Juramento de Bandera"
+                                class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="absolute bottom-4 left-4 right-4">
+                                    <span class="text-white text-sm font-medium px-3 py-1 rounded-full bg-blue-600/80">
+                                        Cívico
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="tag text-sm font-semibold dark:text-gray-200">PATRIÓTICO</span>
+                                <span class="h-1 w-1 rounded-full bg-gray-300 dark:bg-gray-600"></span>
+                                <span class="text-sm text-gray-500 dark:text-gray-400">Anual</span>
+                            </div>
+
+                            <h3 class="mb-4 text-xl font-bold text-gray-900 dark:text-gray-100">Juramento de la Bandera
+                            </h3>
+                            <p class="mb-6 text-base text-gray-600 dark:text-gray-400">
+                                Promueve valores cívicos y patrióticos en la comunidad estudiantil.
+                            </p>
+
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <img src="https://randomuser.me/api/portraits/women/65.jpg"
+                                        alt="Coordinadora Cívica"
+                                        class="w-8 h-8 rounded-full border-2 border-white dark:border-gray-700 shadow-sm" />
+                                    <div>
+                                        <p class="text-sm font-medium text-gray-900 dark:text-gray-100">Prof. Ramírez
+                                        </p>
+                                        <p class="text-xs text-gray-500 dark:text-gray-400">Coordinadora Cívica</p>
+                                    </div>
+                                </div>
+                                <!-- <button onclick="openModal('juramentoBandera')"
+                                    class="text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 font-medium text-sm">
+                                    Ver Detalles →
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria de Fotos -->
+    <section
+        class="relative overflow-hidden dark:bg-black before:absolute before:top-0 before:start-1/2 before:bg-[url('https://preline.co/assets/svg/examples/polygon-bg-element.svg')] dark:before:bg-[url('https://preline.co/assets/svg/examples-dark/polygon-bg-element.svg')] before:bg-no-repeat before:bg-top before:bg-cover before:size-full before:-z-[1] before:transform before:-translate-x-1/2">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div
+                class="absolute -top-32 -left-32 w-96 h-96 bg-blue-200 dark:bg-blue-900 rounded-full mix-blend-multiply filter blur-3xl opacity-30">
+            </div>
+            <div
+                class="absolute top-32 -right-32 w-96 h-96 bg-blue-200 dark:bg-blue-900 rounded-full mix-blend-multiply filter blur-3xl opacity-30">
+            </div>
+        </div>
+
+        <div id="galeria" class="relative mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24">
+            <div class="flex flex-col items-center mb-10">
+                <div
+                    class="mb-6 inline-block rounded-full bg-gray-100/80 dark:bg-gray-800/80 backdrop-blur-sm px-4 py-1.5 text-sm font-semibold dark:text-gray-200">
+                    📸 Nuestros Momentos
+                </div>
+                <h2
+                    class="text-center text-3xl font-bold md:text-5xl bg-gradient-to-r from-gray-800 to-gray-600 dark:from-gray-200 dark:to-gray-400 bg-clip-text text-transparent">
+                    Galeria de <span class="text-blue-600"> Fotos</span>
+
+                </h2>
+                <p class="mb-8 mt-4 text-center text-base text-gray-600 dark:text-gray-400 max-w-xl">
+                    Explora los momentos más memorables de nuestra institución educativa
+                </p>
+
+                <div id="filter-buttons" class="flex items-center justify-center py-2 md:py-2 flex-wrap">
+                    <button data-filter="all"
+                        class="filter-btn text-blue-700 hover:text-white border border-blue-600 bg-white hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:bg-gray-900 dark:focus:ring-blue-800">
+                        Todas las categorias
+                    </button>
+                    <button data-filter="eventos"
+                        class="filter-btn text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:text-white dark:focus:ring-gray-800">
+                        Eventos Institucionales
+                    </button>
+                    <button data-filter="viajes-escolares"
+                        class="filter-btn text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:text-white dark:focus:ring-gray-800">
+                        Viajes Escolares
+                    </button>
+                    <button data-filter="especialidades"
+                        class="filter-btn text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:text-white dark:focus:ring-gray-800">
+                        Especialidades
+                    </button>
+                    <button data-filter="escuela"
+                        class="filter-btn text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:text-white dark:focus:ring-gray-800">
+                        Escuela
+                    </button>
+                </div>
+            </div>
+
+            <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-6">
+                <div class="gallery-category" data-category="patio escuela">
+                    <div class="space-y-6">
+                        <img class="w-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
+                            src="static/img/patio_1.jpeg" alt="Patio 1">
+                        <img class="w-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
+                            src="static/img/patio_2.jpeg" alt="Patio 2">
+                        <img class="w-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
+                            src="static/img/patio_3.jpeg" alt="Patio 3">
+                        <img class="w-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
+                            src="static/img/patio_4.jpeg" alt="Patio 4">
+                        <img class="w-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
+                            src="static/img/patio_5.jpeg" alt="Patio 5">
+                        <img class="w-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
+                            src="static/img/patio_6.jpeg" alt="Patio 6">
+                        <img class="w-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
+                            src="static/img/patio_7.jpeg" alt="Patio 6">
+                    </div>
+                </div>
+
+                <div class="gallery-category" data-category="especialidades">
+                    <div class="space-y-6">
+                        <img class="w-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
+                            src="static/img/especialidad_1.jpeg" alt="Especialidad 1">
+                        <img class="w-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
+                            src="static/img/especialidad_2.jpeg" alt="Especialidad 2">
+                        <img class="w-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
+                            src="static/img/especialidad_3.jpeg" alt="Especialidad 2">
+                    </div>
+                </div>
+
+                <div class="gallery-category" data-category="eventos">
+                    <div class="space-y-6">
+                        <img class="w-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
+                            src="static/img/evento_1.jpeg" alt="Deportes 2">
+                        <img class="w-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
+                            src="static/img/evento_2.jpeg" alt="Deportes 3">
+                        <img class="w-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
+                            src="static/img/evento_3.jpeg" alt="Deportes 2">
+                        <img class="w-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
+                            src="static/img/evento_4.jpeg" alt="Deportes 3">
+                        <img class="w-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
+                            src="static/img/evento_5.jpeg" alt="Deportes 2">
+                        <img class="w-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
+                            src="static/img/evento_6.jpeg" alt="Deportes 3">
+                        <img class="w-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
+                            src="static/img/evento_7.jpeg" alt="Deportes 2">
+                        <img class="w-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
+                            src="static/img/evento_8.jpeg" alt="Deportes 3">
+                    </div>
+                </div>
+
+                <div class="gallery-category" data-category="viajes-escolares">
+                    <div class="space-y-6">
+                        <img class="w-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
+                            src="static/img/viaje_1.jpeg" alt="Especialidad 1">
+                        <img class="w-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
+                            src="static/img/viaje_2.jpeg" alt="Especialidad 2">
+                        <img class="w-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
+                            src="static/img/viaje_3.jpeg" alt="Especialidad 2">
+                        <img class="w-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
+                            src="static/img/viaje_4.jpeg" alt="Especialidad 1">
+                        <img class="w-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
+                            src="static/img/viaje_5.jpeg" alt="Especialidad 2">
+                        <img class="w-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
+                            src="static/img/viaje_6.jpeg" alt="Especialidad 2">
+                        <img class="w-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
+                            src="static/img/viaje_7.jpeg" alt="Especialidad 1">
+                        <img class="w-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
+                            src="static/img/viaje_8.jpeg" alt="Especialidad 2">
+                        <img class="w-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
+                            src="static/img/viaje_9.jpeg" alt="Especialidad 2">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Download Button - Now centered and spanning full grid width -->
+            <div class="grid md:grid-cols-3 gap-8 mt-8">
+                <a href="static/archivos/FOTOS ANTIGUAS.pdf" download
+                    class="md:col-span-3 flex items-center justify-center mx-auto bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-2" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                        <polyline points="21 15 16 10 5 21"></polyline>
+                    </svg>
+                    Descargar Archivo de Fotos Antiguas
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sectción de entrevistas -->
+    <section class="py-16">
+        <div class="container mx-auto max-w-7xl px-4">
+            <div class="text-center mb-8">
+                <div
+                    class="inline-block rounded-full bg-gray-100/80 dark:bg-gray-800/80 backdrop-blur-sm px-4 py-1.5 text-sm font-semibold dark:text-gray-200 mb-4">
+                    🎤 Entrevistas
+                </div>
+                <h2
+                    class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-800 to-gray-600 dark:from-gray-200 dark:to-gray-400 bg-clip-text text-transparent">
+                    Entrevistas <span class="text-blue-600">Institucionales</span>
+                </h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-xl mx-auto mb-6">
+                    Descargue las entrevistas realizadas a nuestras principales autoridades institucionales.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Interview Card 1 -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2">
+                    <div class="p-6 flex items-center border-b border-gray-100 dark:border-gray-700">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mr-6 shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">
+                                Mg. Teresa Edith Aguilar Morejo
+                            </h3>
+                            <p class="text-blue-600 dark:text-blue-400 font-medium uppercase tracking-wide text-sm">
+                                Entrevista - Rectora
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <a href="static/archivos/Entrevista a la Rectora.docx" download 
+                           class="w-full flex items-center justify-center bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 transition-colors space-x-3 font-semibold shadow-md hover:shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                            <span>Descargar Entrevista</span>
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- Interview Card 2 -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2">
+                    <div class="p-6 flex items-center border-b border-gray-100 dark:border-gray-700">
+                        <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mr-6 shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">
+                                Lic. Jadan Suarez Julia Esther
+                            </h3>
+                            <p class="text-green-600 dark:text-green-400 font-medium uppercase tracking-wide text-sm">
+                                Entrevista - Maestra
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <a href="static/archivos/Entrevista a la licenciada Julia Jadan.docx" download 
+                           class="w-full flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-xl hover:bg-green-700 transition-colors space-x-3 font-semibold shadow-md hover:shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                            <span>Descargar Entrevista</span>
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- Interview Card 3 -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2">
+                    <div class="p-6 flex items-center border-b border-gray-100 dark:border-gray-700">
+                        <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mr-6 shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">
+                                Lic. Cárdenas Ortiz Yolanda Nathaly
+                            </h3>
+                            <p class="text-green-600 dark:text-green-400 font-medium uppercase tracking-wide text-sm">
+                                Entrevista - Maestra
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <a href="static/archivos/ENTREVISTA A LA LICENCIADA YOLANDA CÁRDENAS.docx" download 
+                           class="w-full flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-xl hover:bg-green-700 transition-colors space-x-3 font-semibold shadow-md hover:shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                            <span>Descargar Entrevista</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contactos" class="relative overflow-hidden dark:bg-black">
+
+        <div class="relative mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24">
+            <div class="flex flex-col items-center mb-10">
+                <div
+                    class="mb-6 inline-block rounded-full bg-gray-100/80 dark:bg-gray-800/80 backdrop-blur-sm px-4 py-1.5 text-sm font-semibold dark:text-gray-200">
+                    📞 Contáctanos
+                </div>
+                <h2
+                    class="text-center text-3xl font-bold md:text-5xl bg-gradient-to-r from-gray-800 to-gray-600 dark:from-gray-200 dark:to-gray-400 bg-clip-text text-transparent">
+                    Comunícate con <span class="text-blue-600"> Nosotros</span>
+
+                </h2>
+                <p class="mb-8 mt-4 text-center text-base text-gray-600 dark:text-gray-400 max-w-xl">
+                    Estamos aquí para atender tus consultas y brindarte toda la información que necesites.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Contact Form -->
+                <form class="bg-white dark:bg-gray-800 p-8 shadow rounded-lg space-y-6">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label for="nombre"
+                                class="block text-sm font-medium text-gray-700 dark:text-gray-300">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre"
+                                class="mt-1 block w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm dark:bg-gray-700 dark:text-white">
+                        </div>
+                        <div>
+                            <label for="apellido"
+                                class="block text-sm font-medium text-gray-700 dark:text-gray-300">Apellido</label>
+                            <input type="text" id="apellido" name="apellido" placeholder="Tu apellido"
+                                class="mt-1 block w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm dark:bg-gray-700 dark:text-white">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Correo
+                            Electrónico</label>
+                        <input type="email" id="email" name="email" placeholder="tu.correo@ejemplo.com"
+                            class="mt-1 block w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm dark:bg-gray-700 dark:text-white">
+                    </div>
+
+                    <div>
+                        <label for="telefono"
+                            class="block text-sm font-medium text-gray-700 dark:text-gray-300">Teléfono</label>
+                        <input type="text" id="telefono" name="telefono" placeholder="+593 99 793 2650"
+                            class="mt-1 block w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm dark:bg-gray-700 dark:text-white">
+                    </div>
+
+                    <div>
+                        <label for="mensaje" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Tu
+                            Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..."
+                            class="mt-1 block w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm h-32 dark:bg-gray-700 dark:text-white"></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full bg-blue-600 text-white font-medium py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:bg-blue-700 dark:hover:bg-blue-800">
+                        Enviar Mensaje
+                    </button>
+                </form>
+
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div class="flex items-center">
+                        <div
+                            class="w-10 h-10 flex justify-center items-center bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-lg">
+                            <i class="fas fa-map-marker-alt w-6 h-6"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">Dirección</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Naranjal, Ecuador</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Unidad Educativa 7 de Noviembre</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center">
+                        <div
+                            class="w-10 h-10 flex justify-center items-center bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-lg">
+                            <i class="fas fa-envelope w-6 h-6"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">Correo Electrónico</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Escríbenos para más información</p>
+                            <p class="text-sm text-blue-600 dark:text-blue-400 font-medium">
+                                unidad.educativa7noviembre@edu.ec</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center">
+                        <div
+                            class="w-10 h-10 flex justify-center items-center bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-lg">
+                            <i class="fas fa-clock w-6 h-6"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">Horario de Atención</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Martes</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">10:00 AM - 11:00 AM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <section
+        class="relative overflow-hidden dark:bg-black before:absolute before:top-0 before:start-1/2 before:bg-[url('https://preline.co/assets/svg/examples/polygon-bg-element.svg')] dark:before:bg-[url('https://preline.co/assets/svg/examples-dark/polygon-bg-element.svg')] before:bg-no-repeat before:bg-top before:bg-cover before:size-full before:-z-[1] before:transform before:-translate-x-1/2">
+        <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+            <div class="space-y-8">
+                <!-- Logo y Newsletter -->
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+                    <div class="flex items-center space-x-3">
+                        <img src="static/img/icono.png" alt="Escuela 7 de Noviembre"
+                            class="h-10 w-10 rounded-full object-cover">
+                        <span
+                            class="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent dark:bg-gradient-to-r dark:from-blue-300 dark:to-purple-400">
+                            Unidad Educativa 7 de Noviembre
+                        </span>
+                    </div>
+
+                    <div class="mt-8 lg:mt-0">
+                        <form class="flex flex-col sm:flex-row sm:gap-2">
+                            <label for="email-address" class="sr-only">Email</label>
+                            <input type="email" id="email-address"
+                                class="newsletter-input w-full rounded-full border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 px-5 py-3 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none sm:max-w-xs"
+                                placeholder="Ingresa tu email para novedades" />
+                            <button type="submit"
+                                class="mt-3 sm:mt-0 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900">
+                                Suscribirse
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Enlaces -->
+                <div class="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-4">
+                    <div class="space-y-3">
+                        <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-200">Especialidades</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#bachillerato-tecnico"
+                                    class="footer-link text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">Bachillerato
+                                    Técnico</a></li>
+                            <li><a href="#especialidades-actuales"
+                                    class="footer-link text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">Especialidades
+                                    Actuales</a></li>
+                            <li><a href="#requisitos"
+                                    class="footer-link text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">Requisitos
+                                    de Inscripción</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-3">
+                        <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-200">Actividades</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#eventos-academicos"
+                                    class="footer-link text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">Eventos
+                                    Académicos</a></li>
+                            <li><a href="#extracurriculares"
+                                    class="footer-link text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">Actividades
+                                    Extracurriculares</a></li>
+                            <li><a href="#galeria"
+                                    class="footer-link text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">Galería
+                                    de Fotos</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-3">
+                        <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-200">Institución</h3>
+                        <ul class="space-y-2">
+                            <li>
+                                <a href="#" id="aboutUsLink"
+                                    class="footer-link text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">
+                                    Sobre Nosotros
+                                </a>
+                            </li>
+
+                            <!-- Modal -->
+                            <div id="aboutUsModal"
+                                class="fixed inset-0 z-[9999] hidden bg-black bg-opacity-70 items-center justify-center overflow-x-hidden overflow-y-auto">
+                                <div class="relative w-full max-w-4xl mx-auto my-6 animate-fade-in-up">
+                                    <div
+                                        class="bg-white rounded-2xl shadow-2xl dark:bg-gray-800 max-h-[90vh] overflow-y-auto">
+                                        <!-- Modal Header -->
+                                        <div
+                                            class="sticky top-0 bg-white dark:bg-gray-800 z-10 flex items-center justify-between p-6 border-b dark:border-gray-700">
+                                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Sobre Nuestra
+                                                Institución</h3>
+                                            <button id="closeModal"
+                                                class="text-gray-400 hover:text-gray-600 dark:hover:text-white">
+                                                <i class="fas fa-times text-2xl"></i>
+                                            </button>
+                                        </div>
+
+                                        <!-- Modal Content -->
+                                        <div class="p-6 space-y-6">
+                                            <div class="grid md:grid-cols-2 gap-6">
+                                                <div>
+                                                    <h4 class="text-xl font-semibold text-blue-600 mb-4">Nuestra
+                                                        Historia</h4>
+                                                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                                                        Fundada hace más de 20 años, nuestra institución educativa ha
+                                                        sido un pilar en la formación integral de estudiantes,
+                                                        comprometida con la excelencia académica y el desarrollo humano.
+                                                    </p>
+
+                                                    <h4 class="text-xl font-semibold text-blue-600 mb-4">Misión</h4>
+                                                    <p class="text-gray-600 dark:text-gray-300">
+                                                        Formar ciudadanos íntegros, críticos y comprometidos con su
+                                                        comunidad, proporcionando una educación de calidad que prepare a
+                                                        nuestros estudiantes para los desafíos del mundo moderno.
+                                                    </p>
+                                                </div>
+
+                                                <div>
+                                                    <h4 class="text-xl font-semibold text-blue-600 mb-4">Visión</h4>
+                                                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                                                        Ser una institución líder en educación, reconocida por la
+                                                        formación de profesionales innovadores, éticos y comprometidos
+                                                        con el desarrollo sostenible de la sociedad.
+                                                    </p>
+
+                                                    <h4 class="text-xl font-semibold text-blue-600 mb-4">Valores</h4>
+                                                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                                                        <li>• Respeto</li>
+                                                        <li>• Integridad</li>
+                                                        <li>• Responsabilidad</li>
+                                                        <li>• Innovación</li>
+                                                        <li>• Compromiso Social</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Modal Footer -->
+                                        <div
+                                            class="sticky bottom-0 bg-white dark:bg-gray-800 z-10 flex justify-end p-6 border-t dark:border-gray-700">
+                                            <button id="closeModalFooter"
+                                                class="px-6 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
+                                                Cerrar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <li><a href="#contactos"
+                                    class="footer-link text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">Contacto</a>
+                            </li>
+                            <li><a href="#autoridades"
+                                    class="footer-link text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">Autoridades</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-3">
+                        <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-200">Social</h3>
+                        <div class="flex space-x-4">
+                            <a href="https://www.facebook.com/unidadeducativa.sietedenoviembre"
+                                class="social-icon rounded-full bg-gray-100 dark:bg-gray-800 p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700">
+                                <span class="sr-only">Facebook</span>
+                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Bottom -->
+                <div class="border-t border-gray-200 dark:border-gray-700 pt-8">
+                    <p class="text-center text-xs text-gray-500 dark:text-gray-400">
+                        &copy; 2024 Unidad Educativa 7 de Noviembre - Todos los derechos reservados<br>Web desarrollada
+                        en su totalidad por <a href="https://github.com/AlexisJr2004" class="text-blue-500">Alex
+                            Duran</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg"
+            class="transition duration-300 ease-in-out delay-150">
+            <defs>
+                <linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%">
+                    <stop offset="5%" stop-color="#2193b0"></stop>
+                    <stop offset="95%" stop-color="#6dd5ed"></stop>
+                </linearGradient>
+            </defs>
+            <path
+                d="M 0,500 C 0,500 0,166 0,166 C 107.2153110047847,190.9665071770335 214.4306220095694,215.93301435406698 317,210 C 419.5693779904306,204.06698564593302 517.4928229665072,167.23444976076556 606,157 C 694.5071770334928,146.76555023923444 773.598086124402,163.12918660287082 866,164 C 958.401913875598,164.87081339712918 1064.1148325358852,150.2488038277512 1162,148 C 1259.8851674641148,145.7511961722488 1349.9425837320573,155.8755980861244 1440,166 C 1440,166 1440,500 1440,500 Z"
+                stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="0.53"
+                class="transition-all duration-300 ease-in-out delay-150 path-0"></path>
+            <path
+                d="M 0,500 C 0,500 0,333 0,333 C 77.34928229665073,329.6794258373206 154.69856459330146,326.3588516746412 247,319 C 339.30143540669854,311.6411483253588 446.555023923445,300.24401913875596 540,316 C 633.444976076555,331.75598086124404 713.0813397129187,374.6650717703349 820,394 C 926.9186602870813,413.3349282296651 1061.1196172248804,409.0956937799043 1169,395 C 1276.8803827751196,380.9043062200957 1358.44019138756,356.95215311004785 1440,333 C 1440,333 1440,500 1440,500 Z"
+                stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="1"
+                class="transition-all duration-300 ease-in-out delay-150 path-1"></path>
+        </svg>
+    </section>
+
+    <!-- Boton Ir Arriba -->
+    <div class="z-50 fixed bottom-36 right-4 flex flex-col space-y-6 items-center">
+        <div>
+            <button id="goTopBtn" title="Ir arriba"
+                class="bg-blue-500 text-white px-4 py-2 rounded-full shadow-md transform translate-y-20 opacity-0 transition-all duration-500 ease-in-out">
+                <i class="fas fa-caret-up"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Boton de Accesibilidad -->
+    <button id="dropdownDefaultButton"
+        class="z-50 left-15 bg-gradient-to-r from-blue-700 to-blue-700 dark:from-indigo-700 dark:to-indigo-700 w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300"
+        type="button">
+        <span class="fas fa-person text-lg text-white"></span>
+    </button>
+    <div id="dropdown"
+        class="z-50 bg-white rounded-xl shadow-lg w-72 dark:bg-gray-800 border border-gray-100 dark:border-gray-700">
+        <div class="px-4 py-3">
+            <ul class="space-y-4" aria-labelledby="dropdownDefaultButton">
+
+                <li>
+                    <h4
+                        class="text-lg font-semibold text-gray-800 dark:text-white text-center pb-1.5 border-b border-gray-200 dark:border-gray-600">
+                        Opciones de Accesibilidad
+                    </h4>
+                </li>
+                <li>
+                    <div class="space-y-1.5">
+                        <p class="text-xs text-gray-600 dark:text-gray-300 mb-2">Zoom</p>
+                        <div class="flex justify-between items-center gap-2">
+                            <button onclick="changeZoom('in')"
+                                class="flex-1 p-2 bg-indigo-50 hover:bg-indigo-100 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-lg transition-all duration-200 group">
+                                <i
+                                    class="fas fa-search-plus text-indigo-600 dark:text-indigo-400 group-hover:scale-110 transition-transform"></i>
+                            </button>
+                            <button onclick="changeZoom('out')"
+                                class="flex-1 p-2 bg-indigo-50 hover:bg-indigo-100 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-lg transition-all duration-200 group">
+                                <i
+                                    class="fas fa-search-minus text-indigo-600 dark:text-indigo-400 group-hover:scale-110 transition-transform"></i>
+                            </button>
+                            <button onclick="resetZoom()"
+                                class="flex-1 p-2 bg-indigo-50 hover:bg-indigo-100 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-lg transition-all duration-200 group">
+                                <i
+                                    class="fas fa-undo text-indigo-600 dark:text-indigo-400 group-hover:scale-110 transition-transform"></i>
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="space-y-1.5">
+                        <p class="text-xs text-gray-600 dark:text-gray-300 mb-2">Tamaño de texto</p>
+                        <div class="flex justify-between items-center gap-2">
+                            <button onclick="changeFontSize('increase')"
+                                class="flex-1 p-2 bg-indigo-50 hover:bg-indigo-100 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-lg transition-all duration-200 group">
+                                <span
+                                    class="text-indigo-600 dark:text-indigo-400 font-bold group-hover:scale-110 transition-transform inline-block">A+</span>
+                            </button>
+                            <button onclick="changeFontSize('decrease')"
+                                class="flex-1 p-2 bg-indigo-50 hover:bg-indigo-100 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-lg transition-all duration-200 group">
+                                <span
+                                    class="text-indigo-600 dark:text-indigo-400 font-bold group-hover:scale-110 transition-transform inline-block">A-</span>
+                            </button>
+                            <button onclick="resetFontSize()"
+                                class="flex-1 p-2 bg-indigo-50 hover:bg-indigo-100 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-lg transition-all duration-200 group">
+                                <i
+                                    class="fas fa-undo text-indigo-600 dark:text-indigo-400 group-hover:scale-110 transition-transform"></i>
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="space-y-2">
+                        <button onclick="changeFont()"
+                            class="w-full p-2.5 bg-indigo-50 hover:bg-indigo-100 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-lg transition-all duration-200 text-indigo-600 dark:text-indigo-400 group">
+                            <i class="fas fa-font mr-1.5 group-hover:scale-110 transition-transform inline-block"></i>
+                            <span class="font-medium text-sm current-font-name">Quicksand</span>
+                        </button>
+                        <button onclick="toggleTextToSpeech()" id="textToSpeechButton"
+                            class="w-full p-2.5 bg-indigo-50 hover:bg-indigo-100 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-lg transition-all duration-200 text-indigo-600 dark:text-indigo-400 group">
+                            <i
+                                class="fas fa-volume-up mr-1.5 group-hover:scale-110 transition-transform inline-block"></i>
+                            <span class="font-medium text-sm">Lector de Página</span>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Cookies Section -->
+    <div id="cookies-consent" class="fixed bottom-0 end-0 z-[60] sm:max-w-sm w-full mx-auto p-6">
+        <div class="p-4 bg-white/60 backdrop-blur-lg rounded-xl shadow-2xl dark:bg-neutral-900/60 dark:shadow-black/70"
+            id="cookie-card">
+            <div class="flex justify-between gap-x-5">
+                <div class="grow">
+                    <h2 class="font-semibold text-gray-800 dark:text-white">
+                        Configuración de Cookies
+                    </h2>
+                </div>
+                <button id="close-btn" type="button"
+                    class="inline-flex rounded-full p-2 text-gray-500 hover:bg-white focus:outline-none focus:bg-white dark:text-neutral-300 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800">
+                    <span class="sr-only">Cerrar</span>
+                    <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M18 6 6 18"></path>
+                        <path d="m6 6 12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <p class="mt-2 text-sm text-gray-800 dark:text-neutral-200">
+                Utilizamos cookies para mejorar tu experiencia. Visita nuestra <a href="#"
+                    class="inline-flex items-center gap-x-1.5 text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500">Política
+                    de Cookies</a> para más información.
+            </p>
+            <div class="mt-5 mb-2 w-full flex gap-x-2">
+                <div class="grid w-full">
+                    <button id="accept-all" type="button"
+                        class="py-2 px-3 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
+                        Aceptar todas
+                    </button>
+                </div>
+                <div class="grid w-full">
+                    <button id="reject-all" type="button"
+                        class="py-2 px-3 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
+                        Rechazar todas
+                    </button>
+                </div>
+            </div>
+            <div class="grid w-full">
+                <button id="manage-cookies" type="button"
+                    class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800">
+                    Gestionar cookies
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ChatBot Section -->
+    <div id="chatbot-container" class="fixed bottom-4 left-8 z-50">
+        <button id="open-chat"
+            class="group bg-gradient-to-r bg-blue-700 dark:bg-indigo-700 w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300">
+            <i class="fas fa-message text-xl text-white group-hover:rotate-12 transition-transform duration-300"></i>
+        </button>
+
+        <div id="chatbot"
+            class="hidden opacity-0 translate-y-5 w-80 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 ease-out border border-gray-200 dark:border-gray-700">
+            <div class="text-white p-2" style="background: linear-gradient(to right, #60a5fa, #1d4ed8);">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="relative">
+                            <img src="https://img.freepik.com/vector-gratis/chatbot-mensaje-chat-vectorart_78370-4104.jpg"
+                                alt="ChatBot Profile" class="rounded-full w-10 h-10">
+                            <span
+                                class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-white"></span>
+                        </div>
+                        <div>
+                            <p class="text-sm text-blue-100 font-bold">Alexis AI</p>
+                            <p class="text-xs text-blue-100">Asistente Virtual</p>
+                        </div>
+                    </div>
+                    <button id="close-chat" class="p-2 hover:bg-white/10 rounded-full transition-colors duration-300">
+                        <i class="fas fa-times text-lg"></i>
+                    </button>
+                </div>
+            </div>
+
+            <svg width="100%" height="25%" id="svg" viewBox="0 0 1440 490" xmlns="http://www.w3.org/2000/svg"
+                class="rotate-180 mt-0 transition duration-300 ease-in-out delay-150">
+                <defs>
+                    <linearGradient id="gradient_chat" x1="0%" y1="50%" x2="100%" y2="50%">
+                        <stop offset="5%" stop-color="#1d4ed8"></stop>
+                        <stop offset="95%" stop-color="#60a5fa"></stop>
+                    </linearGradient>
+                </defs>
+                <path
+                    d="M 0,500 C 0,500 0,333 0,333 C 77.34928229665073,329.6794258373206 154.69856459330146,326.3588516746412 247,319 C 339.30143540669854,311.6411483253588 446.555023923445,300.24401913875596 540,316 C 633.444976076555,331.75598086124404 713.0813397129187,374.6650717703349 820,394 C 926.9186602870813,413.3349282296651 1061.1196172248804,409.0956937799043 1169,395 C 1276.8803827751196,380.9043062200957 1358.44019138756,356.95215311004785 1440,333 C 1440,333 1440,500 1440,500 Z"
+                    stroke="none" stroke-width="0" fill="url(#gradient_chat)" fill-opacity="1"
+                    class="transition-all duration-300 ease-in-out delay-150 path-0"></path>
+            </svg>
+
+            <div id="selected-model" class="mx-4 my-3">
+                <div
+                    class="flex items-center justify-between p-2 bg-gray-50 dark:bg-gray-700/50 rounded-xl border border-gray-200 dark:border-gray-600 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200">
+                    <div class="flex items-center space-x-2">
+                        <div
+                            class="w-7 h-7 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+                            <i class="fas fa-robot text-blue-600 dark:text-blue-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-medium text-gray-700 dark:text-gray-300">Modelo actual</p>
+                            <p id="current-model" class="text-xs text-gray-500 dark:text-gray-400">Ninguno</p>
+                        </div>
+                    </div>
+                    <button class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="chat-messages" class="h-60 overflow-y-auto p-4 bg-gray-50 dark:bg-gray-800/50 space-y-3 relative">
+                <div id="model-selection"
+                    class="hidden absolute top-0 left-2 z-50 bg-white dark:bg-gray-800 shadow-xl rounded-2xl border border-gray-300 dark:border-gray-700 w-[calc(100%-16px)] transform transition-all duration-300">
+                    <div role="menuitem" class="p-2 border-b border-gray-200 dark:border-gray-700">
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Seleccionar un modelo para iniciar</p>
+                    </div>
+
+                    <div role="menuitem"
+                        class="model-option hover:bg-gray-50 dark:hover:bg-gray-700 p-2 cursor-pointer transition-colors duration-200">
+                        <div class="flex items-center space-x-3">
+                            <div
+                                class="w-8 h-8 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+                                <i class="fas fa-brain text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-medium text-gray-700 dark:text-gray-300">LLaMA 3</p>
+                                <p id="current-model" class="text-xs text-gray-500 dark:text-gray-400">Modelo funcional
+                                    con WebLLM<br>Ideal para la mayoría de las tareas</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div role="menuitem"
+                        class="model-option hover:bg-gray-50 dark:hover:bg-gray-700 p-2 cursor-pointer transition-colors duration-200">
+                        <div class="flex items-center space-x-3">
+                            <div
+                                class="w-8 h-8 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                                <i class="fas fa-bolt text-green-600 dark:text-green-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-medium text-gray-700 dark:text-gray-300">ChatGPT-3.5-turbo</p>
+                                <p id="current-model" class="text-xs text-gray-500 dark:text-gray-400">Modelo funcional
+                                    con API<br>Más rápido para las tareas cotidianas</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mx-4 my-1 h-px bg-gray-300 dark:bg-gray-600"></div>
+
+                    <div id="retry-button" role="menuitem"
+                        class="hover:bg-gray-50 dark:hover:bg-gray-700 p-3 cursor-pointer transition-colors duration-200">
+                        <div class="flex items-center space-x-3">
+                            <div
+                                class="w-8 h-8 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center">
+                                <svg class="text-gray-400 dark:text-gray-500" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path
+                                        d="M3.06957 10.8763C3.62331 6.43564 7.40967 3 12 3C14.2824 3 16.4028 3.85067 18.0118 5.25439V4C18.0118 3.44772 18.4595 3 19.0118 3C19.5641 3 20.0118 3.44772 20.0118 4V8C20.0118 8.55228 19.5641 9 19.0118 9H15C14.4477 9 14 8.55228 14 8C14 7.44772 14.4477 7 15 7H16.9571C15.6757 5.76379 13.9101 5 12 5C8.43108 5 5.48466 7.67174 5.0542 11.1237C4.98586 11.6718 4.48619 12.0607 3.93815 11.9923C3.39011 11.924 3.00123 11.4243 3.06957 10.8763ZM20.0618 12.0077C20.6099 12.076 20.9988 12.5757 20.9304 13.1237C20.3767 17.5644 16.5903 21 12 21C9.72322 21 7.60762 20.1535 5.99999 18.7559V20C5.99999 20.5523 5.55228 21 4.99999 21C4.44771 21 3.99999 20.5523 3.99999 20V16C3.99999 15.4477 4.44771 15 4.99999 15H8.99999C9.55228 15 9.99999 15.4477 9.99999 16C9.99999 16.5523 9.55228 17 8.99999 17H7.04285C8.32433 18.2362 10.0899 19 12 19C15.5689 19 18.5153 16.3283 18.9458 12.8763C19.0141 12.3282 19.5138 11.9393 20.0618 12.0077Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-xs font-medium text-gray-700 dark:text-gray-300">Volver a intentar</p>
+                                <p id="current-model" class="text-xs text-gray-500 dark:text-gray-400">LLaMA 3</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative">
+                <button id="scroll-button"
+                    class="absolute left-1/2 -translate-x-1/2 -top-3 z-50 w-7 h-7 bg-white dark:bg-gray-700 rounded-full shadow-md flex items-center justify-center transform transition-all duration-300 border border-gray-200 dark:border-gray-600 hover:shadow-lg hover:scale-105">
+                    <i id="scroll-icon"
+                        class="fas fa-chevron-up text-gray-500 dark:text-gray-400 text-sm transition-transform duration-300"></i>
+                </button>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-2 border-t border-gray-200 dark:border-gray-700">
+                <div class="flex items-center space-x-3">
+                    <div class="flex-1 relative">
+                        <input id="chat-input" type="text"
+                            class="w-full px-5 py-2 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl shadow-sm focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-600 focus:border-transparent transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-500 text-xs"
+                            placeholder="Escribe tu mensaje..." disabled>
+                        <div class="absolute right-3 top-1/2 -translate-y-1/2 flex items-center space-x-2">
+                            <button id="emoji-button"
+                                class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 focus:outline-none">
+                                <i class="far fa-smile text-lg"></i>
+                            </button>
+                            <button id="voice-input"
+                                class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 focus:outline-none">
+                                <i class="fas fa-microphone"></i>
+                            </button>
+                            <div id="recording-indicator" class="hidden absolute right-12 top-1/2 -translate-y-1/2">
+                                <div class="animate-pulse flex items-center">
+                                    <div class="w-2 h-2 bg-red-500 rounded-full mr-2"></div>
+                                    <span class="text-xs text-red-500">Grabando...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="send-message"
+                        class="flex-shrink-0 bg-gradient-to-r from-blue-600 to-blue-800 p-2 rounded-xl text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                        disabled>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+
+                <div id="emoji-picker"
+                    class="hidden absolute bottom-20 left-0 bg-white dark:bg-gray-700 rounded-xl shadow-xl border border-gray-200 dark:border-gray-600 p-3 transition-all duration-300">
+                    <div class="flex items-center justify-between mb-3">
+                        <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300">Emojis</h4>
+                        <button id="close-emoji" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-8 gap-2 max-h-40 overflow-y-auto">
+                        <div class="col-span-8 flex space-x-2 mb-2 pb-2 border-b border-gray-200 dark:border-gray-600">
+                            <button class="p-2 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors">
+                                <i class="far fa-smile text-yellow-500"></i>
+                            </button>
+                            <button class="p-2 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors">
+                                <i class="far fa-heart text-red-500"></i>
+                            </button>
+                            <button class="p-2 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors">
+                                <i class="far fa-hand-peace text-blue-500"></i>
+                            </button>
+                            <button class="p-2 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors">
+                                <i class="far fa-flag text-green-500"></i>
+                            </button>
+                        </div>
+                        <button
+                            class="p-2 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors">😀</button>
+                        <button
+                            class="p-2 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors">😂</button>
+                        <button
+                            class="p-2 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors">🥰</button>
+                        <button
+                            class="p-2 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors">😎</button>
+                        <button
+                            class="p-2 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors">🤔</button>
+                        <button
+                            class="p-2 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors">😊</button>
+                        <button
+                            class="p-2 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors">👍</button>
+                        <button
+                            class="p-2 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors">❤️</button>
+                        <button
+                            class="p-2 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors">✨</button>
+                        <button
+                            class="p-2 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors">🎉</button>
+                        <button
+                            class="p-2 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors">🌟</button>
+                        <button
+                            class="p-2 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors">💪</button>
+                        <button
+                            class="p-2 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors">🙌</button>
+                        <button
+                            class="p-2 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors">👏</button>
+                        <button
+                            class="p-2 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors">🤝</button>
+                        <button
+                            class="p-2 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors">👋</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 dark:bg-gray-800 px-4 py-2 border-t border-gray-200 dark:border-gray-700">
+                <div class="flex flex-col items-center space-y-2">
+                    <div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
+                        <i class="fas fa-shield-alt"></i>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Las respuestas del ChatBot son confiables
+                        </p>
+                    </div>
+                    <span id="init-progress-text" class="text-xs text-gray-400 dark:text-gray-500"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Chatbot -->
+    <script type="module">
+        import { CreateWebWorkerMLCEngine } from "https://esm.run/@mlc-ai/web-llm"
+
+        const $ = el => document.querySelector(el)
+        const $openChat = $('#open-chat')
+        const $closeChat = $('#close-chat')
+        const $chatbot = $('#chatbot')
+        const $chatMessages = $('#chat-messages')
+        const $chatInput = $('#chat-input')
+        const $sendMessage = $('#send-message')
+        const $modelSelection = $('#model-selection')
+        const $currentModel = $('#current-model')
+        const $selectedModelDiv = $('#selected-model')
+
+        let messages = []
+        let engine = null
+        let jsonData = []
+        let isEngineInitializing = false
+        let selectedModel = null
+
+        // Nueva función para guardar el modelo seleccionado
+        function saveSelectedModel(model) {
+            localStorage.setItem('selectedChatbotModel', model);
+            localStorage.setItem('selectedChatbotModelName', $currentModel.textContent);
+        }
+
+        // Nueva función para recuperar el modelo guardado
+        function getSavedModel() {
+            const savedModel = localStorage.getItem('selectedChatbotModel');
+            const savedModelName = localStorage.getItem('selectedChatbotModelName');
+            return { model: savedModel, name: savedModelName };
+        }
+
+        // Cargar los datos del JSON
+        async function loadJSONData() {
+            if (jsonData.length === 0) {
+                try {
+                    const response = await fetch('/chatbot_training_data.json');
+                    jsonData = await response.json();
+                } catch (error) {
+                    console.error('Error loading JSON data:', error);
+                }
+            }
+        }
+
+        // Buscar una respuesta en el JSON
+        async function initializeChatbot() {
+            await loadJSONData();
+
+            // Esperar a que el usuario seleccione un modelo
+            selectedModel = await showModelOptions();
+            saveSelectedModel(selectedModel);
+
+            const $modelSelection = document.querySelector('#model-selection');
+            $modelSelection.classList.add('hidden');
+
+            // Resto del código de inicialización...
+            const mainMenuOptions = [
+                "¿Quién eres?",
+                "Información de la Institución",
+                "Niveles Educativos",
+                "Servicios Escolares",
+                "Información Académica",
+                "Actividades Extracurriculares",
+                "Contacto y Ubicación"
+            ];
+
+            const welcomeMessage = [
+                "¡Hola 👋! Soy Alexis, tu ChatBot personal.",
+                "Estoy aquí para ayudarte con cualquier duda al momento de usar nuestra página web.",
+                "¿En qué puedo ayudarte 😊?"
+            ].join("\n");
+
+            await addMessageWithOptions(
+                welcomeMessage,
+                mainMenuOptions,
+                'bot'
+            );
+
+            enableChat();
+        }
+
+
+
+        // Nueva función para crear una opción seleccionable
+        function createOption(text) {
+            const option = document.createElement('div');
+            option.className = 'text-center text-xs text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 my-2 py-2 rounded-lg mx-4 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200';
+            option.innerHTML = `<span>${text}</span>`;
+
+            option.addEventListener('click', async () => {
+                // Agregar la selección como mensaje del usuario
+                await addMessage(text, 'user');
+
+                // Procesar la respuesta basada en la opción seleccionada
+                handleOptionSelection(text);
+            });
+
+            return option;
+        }
+
+        // Nueva función para agregar mensaje con opciones
+        async function addMessageWithOptions(text, options = [], sender) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('mb-4', 'p-3', 'rounded-lg', 'flex', 'flex-col');
+
+            if (sender === 'bot') {
+                messageElement.classList.add(
+                    'bg-gray-100',
+                    'dark:bg-[#0f1e41]',
+                    'mr-auto',
+                    'px-4',
+                    'py-2',
+                    'rounded-lg',
+                    'w-full',
+                    'max-w-[80%]',
+                    'font-semibold'
+                );
+
+                const botTextElement = document.createElement('p');
+                botTextElement.classList.add('text-xs');
+                messageElement.appendChild(botTextElement);
+
+                $chatMessages.appendChild(messageElement);
+                await typeMessage(botTextElement, text);
+
+                // Agregar opciones después del mensaje
+                if (options.length > 0) {
+                    const optionsContainer = document.createElement('div');
+                    optionsContainer.classList.add('mt-4');
+                    options.forEach(optionText => {
+                        optionsContainer.appendChild(createOption(optionText));
+                    });
+                    $chatMessages.appendChild(optionsContainer);
+                }
+            } else {
+                messageElement.classList.add(
+                    'bg-blue-700',
+                    'dark:bg-indigo-700',
+                    'text-white',
+                    'ml-auto',
+                    'inline-block',
+                    'px-4',
+                    'py-2',
+                    'rounded-lg',
+                    'max-w-[60%]',
+                    'text-left',
+                    'font-semibold'
+                );
+                messageElement.innerHTML = `<p class="text-xs">${text}</p>`;
+                $chatMessages.appendChild(messageElement);
+            }
+
+            $chatMessages.scrollTop = $chatMessages.scrollHeight;
+        }
+
+        // Nueva función para manejar la selección de opciones
+        async function handleOptionSelection(option) {
+            let response;
+            let nextOptions = [];
+
+            switch (option) {
+                // Opción para volver al menú principal
+                case "Volver al menú principal":
+                    response = "¿En qué más puedo ayudarte?";
+                    nextOptions = [
+                        "¿Quién eres?",
+                        "Información de la Institución",
+                        "Niveles Educativos",
+                        "Servicios Escolares",
+                        "Información Académica",
+                        "Actividades Extracurriculares",
+                        "Contacto y Ubicación"
+                    ];
+                    break;
+
+                // Mantén el resto de tu código existente sin cambios
+                case "¿Quién eres?":
+                    response = findAnswerInJSON("¿Quién eres?");
+                    nextOptions = [
+                        "Información de la Institución",
+                        "Volver al menú principal"
+                    ];
+                    break;
+
+                case "Información de la Institución":
+                    response = "¿Qué información específica de la institución te gustaría conocer?";
+                    nextOptions = [
+                        "¿A qué zona pertenece la institución?",
+                        "¿Cuál es el tipo de sostenimiento de la escuela?",
+                        "¿Cuál es el régimen escolar de la institución?",
+                        "¿Cuál es la modalidad de educación?",
+                        "¿Cuál es la misión de la Unidad Educativa?",
+                        "Volver al menú principal"
+                    ];
+                    break;
+
+                case "Niveles Educativos":
+                    response = findAnswerInJSON("¿Cuáles son los niveles educativos que ofrece la escuela?");
+                    nextOptions = [
+                        "¿Cuántos estudiantes y docentes tiene la institución?",
+                        "¿Cuál es el tipo de educación?",
+                        "Volver al menú principal"
+                    ];
+                    break;
+
+                case "Servicios Escolares":
+                    response = findAnswerInJSON("¿Qué servicios adicionales ofrece la escuela?");
+                    nextOptions = [
+                        "¿Ofrecen becas o ayudas económicas?",
+                        "¿Cuenta la escuela con transporte escolar?",
+                        "Volver al menú principal"
+                    ];
+                    break;
+
+                case "Información Académica":
+                    response = "¿Qué información académica te interesa?";
+                    nextOptions = [
+                        "¿Cuáles son los horarios de clase?",
+                        "¿Cómo puedo inscribir a mi hijo/a en la escuela?",
+                        "Volver al menú principal"
+                    ];
+                    break;
+
+                case "Actividades Extracurriculares":
+                    response = findAnswerInJSON("¿Qué actividades extracurriculares tienen?");
+                    nextOptions = [
+                        "Volver al menú principal"
+                    ];
+                    break;
+
+                case "Contacto y Ubicación":
+                    response = findAnswerInJSON("¿Dónde está ubicada la Unidad Educativa Siete de Noviembre?");
+                    nextOptions = [
+                        "¿Cómo puedo comunicarme con las autoridades?",
+                        "Volver al menú principal"
+                    ];
+                    break;
+
+                // Dynamically handle sub-menu options
+                default:
+                    response = findAnswerInJSON(option);
+                    if (!response) {
+                        response = "¿Hay algo más en lo que pueda ayudarte?";
+                    }
+                    nextOptions = ["Volver al menú principal"];
+            }
+
+            // Similar implementation to previous function
+            await new Promise(resolve => setTimeout(resolve, 500));
+            await addMessageWithOptions(response, nextOptions, 'bot');
+        }
+
+        // Función para mostrar opciones de modelo
+        function showModelOptions() {
+            return new Promise((resolve) => {
+                const $modelSelection = document.querySelector('#model-selection');
+                const $currentModel = document.querySelector('#current-model');
+
+                if (!$modelSelection || !$currentModel) {
+                    console.error('Required elements not found');
+                    resolve('Llama-3.2-1B-Instruct-q4f32_1-MLC');
+                    return;
+                }
+
+                // Mostrar el menú de selección inmediatamente
+                $modelSelection.classList.remove('hidden');
+
+                const modelOptions = $modelSelection.querySelectorAll('.model-option');
+                const retryButton = $modelSelection.querySelector('#retry-button');
+
+                // Función para manejar la selección del modelo
+                function handleModelSelection(event) {
+                    const selectedOption = event.currentTarget;
+
+                    // Ocultar el menú de selección
+                    $modelSelection.classList.add('hidden');
+
+                    // Remover los event listeners
+                    modelOptions.forEach(option => {
+                        option.removeEventListener('click', handleModelSelection);
+                    });
+                    retryButton.removeEventListener('click', handleModelSelection);
+
+                    // Determinar el modelo seleccionado
+                    let selectedModel;
+                    if (selectedOption === retryButton || selectedOption.textContent.includes('LLaMA 3')) {
+                        selectedModel = 'Llama-3.2-1B-Instruct-q4f32_1-MLC';
+                        $currentModel.textContent = 'LLaMA 3';
+                    } else if (selectedOption.textContent.includes('ChatGPT-3.5-turbo')) {
+                        selectedModel = 'gpt-3.5-turbo';
+                        $currentModel.textContent = 'ChatGPT-3.5-turbo';
+                    }
+
+                    resolve(selectedModel);
+                }
+
+                // Agregar event listeners una sola vez
+                modelOptions.forEach(option => {
+                    option.removeEventListener('click', handleModelSelection); // Remover listener existente si hay
+                    option.addEventListener('click', handleModelSelection);
+                });
+
+                retryButton.removeEventListener('click', handleModelSelection); // Remover listener existente si hay
+                retryButton.addEventListener('click', handleModelSelection);
+            });
+        }
+
+        // Función para cambiar el modelo
+        async function changeModel() {
+            await loadJSONData();
+
+            $modelSelection.classList.add('hidden');
+
+            // Desactivar la entrada de chat mientras se cambia el modelo
+            $chatInput.setAttribute('disabled', '');
+            $sendMessage.setAttribute('disabled', '');
+
+            // Opciones principales del menú
+            const mainMenuOptions = [
+                "¿Quién eres?",
+                "Información de la Institución",
+                "Niveles Educativos",
+                "Servicios Escolares",
+                "Información Académica",
+                "Actividades Extracurriculares",
+                "Contacto y Ubicación"
+            ];
+
+            selectedModel = await showModelOptions();
+            saveSelectedModel(selectedModel);
+
+            // Mensaje de cambio de modelo con las opciones del menú
+            const changeModelMessage = "He cambiado al modelo " + $currentModel.textContent + ". ¿En qué puedo ayudarte?";
+
+            await addMessageWithOptions(
+                changeModelMessage,
+                mainMenuOptions,
+                'bot'
+            );
+
+            // Reactivar la entrada de chat
+            enableChat();
+        }
+
+        // Inicializar el engine de forma perezosa
+        async function initializeEngine() {
+            if (engine && engine.model === selectedModel) return engine;
+            if (isEngineInitializing) {
+                while (isEngineInitializing) {
+                    await new Promise(resolve => setTimeout(resolve, 100));
+                }
+                return engine;
+            }
+
+            isEngineInitializing = true;
+            showLoadingIndicator();
+
+            try {
+                if (selectedModel === 'Llama-3.2-1B-Instruct-q4f32_1-MLC') {
+                    engine = await CreateWebWorkerMLCEngine(
+                        new Worker('/static/js/worker.js', { type: 'module' }),
+                        selectedModel,
+                        {
+                            initProgressCallback: (info) => {
+                                console.log('Init progress:', info);
+                                updateLoadingIndicator(info.text);
+                            }
+                        }
+                    );
+                } else if (selectedModel === 'gpt-3.5-turbo') {
+                    // Para ChatGPT, creamos un engine mock
+                    engine = {
+                        model: 'gpt-3.5-turbo',
+                        chat: {
+                            completions: {
+                                create: async ({ messages }) => {
+                                    const response = await callOpenAIAPI(messages);
+                                    return {
+                                        choices: [{
+                                            delta: { content: response }
+                                        }]
+                                    };
+                                }
+                            }
+                        }
+                    };
+                }
+            } catch (error) {
+                console.error('Error initializing engine:', error);
+                throw error;
+            } finally {
+                isEngineInitializing = false;
+                hideLoadingIndicator();
+            }
+
+            return engine;
+        }
+
+        // Funciones para manejar el indicador de carga
+        function showLoadingIndicator() {
+            const progressText = $('#init-progress-text');
+            progressText.textContent = "Cargando el modelo, por favor espera...";
+            progressText.classList.remove('hidden');
+        }
+
+        function updateLoadingIndicator(text) {
+            const progressText = $('#init-progress-text');
+            progressText.textContent = text;
+        }
+
+        function hideLoadingIndicator() {
+            const progressText = $('#init-progress-text');
+            progressText.textContent = "Carga completada";
+            setTimeout(() => {
+                progressText.classList.add('hidden');
+            }, 3000);
+        }
+
+        // Habilitar el chat cuando el modelo esté listo
+        function enableChat() {
+            $chatInput.removeAttribute('disabled');
+            $sendMessage.removeAttribute('disabled');
+        }
+
+        // Función de añadir mensajes, con el icono de Voz
+        async function addMessage(text, sender) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('mb-4', 'p-3', 'rounded-lg', 'flex', 'flex-col');
+
+            if (sender === 'user') {
+                messageElement.classList.add(
+                    'bg-blue-700',
+                    'dark:bg-indigo-700',
+                    'text-white',
+                    'ml-auto',
+                    'inline-block',
+                    'px-4',
+                    'py-2',
+                    'rounded-lg',
+                    'max-w-[60%]',
+                    'text-left',
+                    'font-semibold'
+                );
+                messageElement.innerHTML = `<p class="text-xs">${text}</p>`;
+                $chatMessages.appendChild(messageElement);
+            } else {
+                messageElement.classList.add(
+                    'bg-gray-100',
+                    'dark:bg-[#0f1e41]',
+                    'mr-auto',
+                    'px-4',
+                    'py-2',
+                    'rounded-lg',
+                    'w-full',
+                    'max-w-[80%]',
+                    'font-semibold'
+                );
+
+                const messageContainer = document.createElement('div');
+                messageContainer.classList.add('flex', 'flex-col');
+
+                const botTextElement = document.createElement('p');
+                botTextElement.classList.add('text-xs', 'mb-2');
+
+                const soundButtonContainer = document.createElement('div');
+                soundButtonContainer.classList.add('flex', 'justify-start', 'mt-2', 'items-center', 'gap-2');
+
+                // Estado para controlar si está reproduciendo
+                let isPlaying = false;
+
+                const soundButton = document.createElement('button');
+                soundButton.innerHTML = `
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-colors duration-200">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11 4.9099C11 4.47485 10.4828 4.24734 10.1621 4.54132L6.67572 7.7372C6.49129 7.90626 6.25019 8.00005 6 8.00005H4C3.44772 8.00005 3 8.44776 3 9.00005V15C3 15.5523 3.44772 16 4 16H6C6.25019 16 6.49129 16.0938 6.67572 16.2629L10.1621 19.4588C10.4828 19.7527 11 19.5252 11 19.0902V4.9099ZM20.3166 6.35665C20.8019 6.09313 21.409 6.27296 21.6725 6.75833C22.5191 8.3176 22.9996 10.1042 22.9996 12.0001C22.9996 13.8507 22.5418 15.5974 21.7323 17.1302C21.4744 17.6185 20.8695 17.8054 20.3811 17.5475C19.8927 17.2896 19.7059 16.6846 19.9638 16.1962C20.6249 14.9444 20.9996 13.5175 20.9996 12.0001C20.9996 10.4458 20.6064 8.98627 19.9149 7.71262C19.6514 7.22726 19.8312 6.62017 20.3166 6.35665Z" fill="currentColor"/>
+                    </svg>
+                    `;
+
+                soundButton.classList.add(
+                    'p-2',
+                    'rounded-full',
+                    'text-gray-600',
+                    'dark:text-gray-400',
+                    'hover:bg-gray-100',
+                    'dark:hover:bg-gray-700',
+                    'hover:text-gray-900',
+                    'dark:hover:text-gray-200',
+                    'transition-all',
+                    'duration-200',
+                    'focus:outline-none',
+                    'focus:ring-2',
+                    'focus:ring-blue-500',
+                    'dark:focus:ring-blue-400',
+                    'focus:ring-opacity-50',
+                    'transform',
+                    'hover:scale-105',
+                    'active:scale-95'
+                );
+
+                // Función para obtener la mejor voz en español
+                function getBestSpanishVoice() {
+                    const voices = speechSynthesis.getVoices();
+                    // Priorizar voces naturales en español
+                    const spanishVoices = voices.filter(voice =>
+                        voice.lang.startsWith('es') && voice.localService
+                    );
+
+                    if (spanishVoices.length > 0) {
+                        return spanishVoices[0];
+                    }
+
+                    // Si no hay voces locales, buscar cualquier voz en español
+                    const anySpanishVoice = voices.filter(voice =>
+                        voice.lang.startsWith('es')
+                    );
+
+                    return anySpanishVoice[0] || null;
+                }
+
+                soundButton.addEventListener('click', () => {
+                    if (isPlaying) {
+                        speechSynthesis.cancel();
+                        isPlaying = false;
+                        return;
+                    }
+
+                    // Cancelar cualquier lectura en curso
+                    speechSynthesis.cancel();
+
+                    const utterance = new SpeechSynthesisUtterance(text);
+
+                    // Configurar la voz y parámetros para una lectura más natural
+                    utterance.voice = getBestSpanishVoice();
+                    utterance.lang = 'es-ES';
+                    utterance.rate = 1.0;  // Velocidad normal
+                    utterance.pitch = 1.1; // Tono ligeramente más alto para más claridad
+                    utterance.volume = 1.0; // Volumen máximo
+
+                    // Añadir pausas naturales en puntuación
+                    const processedText = text.replace(/([.!?])\s+/g, '$1...');
+                    utterance.text = processedText;
+
+                    // Eventos para controlar el estado de reproducción
+                    utterance.onstart = () => {
+                        isPlaying = true;
+                        soundButton.classList.add('text-blue-500');
+                    };
+
+                    utterance.onend = () => {
+                        isPlaying = false;
+                        soundButton.classList.remove('text-blue-500');
+                    };
+
+                    utterance.onerror = () => {
+                        isPlaying = false;
+                        soundButton.classList.remove('text-blue-500');
+                    };
+
+                    speechSynthesis.speak(utterance);
+                });
+
+                messageContainer.appendChild(botTextElement);
+                soundButtonContainer.appendChild(soundButton);
+                messageContainer.appendChild(soundButtonContainer);
+                messageElement.appendChild(messageContainer);
+                $chatMessages.appendChild(messageElement);
+
+                await typeMessage(botTextElement, text);
+            }
+
+            $chatMessages.scrollTop = $chatMessages.scrollHeight;
+        }
+
+        // Función para animar el texto letra por letra
+        function typeMessage(element, text, delay = 50) {
+            return new Promise((resolve) => {
+                let index = 0;
+
+                function typeNextLetter() {
+                    if (index < text.length) {
+                        element.textContent += text.charAt(index);
+                        index++;
+                        setTimeout(typeNextLetter, delay);
+                    } else {
+                        resolve();
+                    }
+                }
+
+                typeNextLetter();
+            });
+        }
+
+        // Función para llamar a la API de OpenAI (versión actual)
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    // Comprueba si este cookie comienza con el nombre que buscamos
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+
+
+        // Enviar el mensaje del usuario
+        async function sendMessage() {
+            const messageText = $chatInput.value.trim();
+            if (messageText === '') return;
+
+            $chatInput.value = '';
+            await addMessage(messageText, 'user');
+            $chatInput.setAttribute('disabled', '');
+            $sendMessage.setAttribute('disabled', '');
+
+            try {
+                // Primero, buscar en el JSON
+                let reply = findAnswerInJSON(messageText);
+
+                if (reply) {
+                    // Si se encuentra una respuesta en el JSON, usarla directamente
+                    await addMessage(reply, 'bot');
+                } else {
+                    // Asegurarse de que el engine está inicializado
+                    try {
+                        engine = await initializeEngine();
+                    } catch (error) {
+                        console.error('Error initializing engine:', error);
+                        throw new Error('Failed to initialize chat engine');
+                    }
+
+                    if (!engine) {
+                        throw new Error('Chat engine is not available');
+                    }
+
+                    if (selectedModel === 'Llama-3.2-1B-Instruct-q4f32_1-MLC') {
+                        try {
+                            const chunks = await engine.chat.completions.create({
+                                messages: [...messages, { role: 'user', content: messageText }],
+                                stream: true
+                            });
+
+                            let reply = '';
+                            const botMessageElement = document.createElement('div');
+                            botMessageElement.classList.add(
+                                'mb-4', 'p-3', 'rounded-lg', 'flex', 'flex-col',
+                                'bg-gray-100', 'dark:bg-[#0f1e41]', 'mr-auto',
+                                'px-4', 'py-2', 'w-full', 'max-w-[80%]', 'font-semibold'
+                            );
+
+                            const botTextElement = document.createElement('p');
+                            botTextElement.classList.add('text-xs');
+                            botMessageElement.appendChild(botTextElement);
+                            $chatMessages.appendChild(botMessageElement);
+
+                            for await (const chunk of chunks) {
+                                const content = chunk.choices[0]?.delta?.content ?? '';
+                                reply += content;
+                                botTextElement.textContent = reply;
+                                $chatMessages.scrollTop = $chatMessages.scrollHeight;
+                            }
+
+                            messages.push({ role: 'assistant', content: reply });
+                        } catch (error) {
+                            console.error('Error in LLaMA stream:', error);
+                            throw new Error('Failed to generate LLaMA response');
+                        }
+                    } else if (selectedModel === 'gpt-3.5-turbo') {
+                        try {
+                            reply = await callOpenAIAPI([...messages, { role: 'user', content: messageText }]);
+                            await addMessage(reply, 'bot');
+                            messages.push({ role: 'assistant', content: reply });
+                        } catch (error) {
+                            console.error('Error in OpenAI API call:', error);
+                            throw new Error('Failed to generate ChatGPT response');
+                        }
+                    } else {
+                        throw new Error('Invalid model selected');
+                    }
+                }
+            } catch (error) {
+                console.error('Error in message handling:', error);
+                await addMessage("Lo siento, ha ocurrido un error al generar la respuesta. Por favor, intenta de nuevo.", 'bot');
+            } finally {
+                $chatInput.removeAttribute('disabled');
+                $sendMessage.removeAttribute('disabled');
+                $chatInput.focus();
+            }
+        }
+        // Función findAnswerInJSON mejorada
+        function findAnswerInJSON(query) {
+            if (!jsonData || !Array.isArray(jsonData)) {
+                console.warn('JSON data is not available or not in the expected format');
+                return null;
+            }
+
+            // Normalizar la consulta
+            const normalizedQuery = query.toLowerCase().trim();
+
+            // Buscar coincidencia exacta primero
+            const exactMatch = jsonData.find(item =>
+                item.question.toLowerCase().trim() === normalizedQuery
+            );
+            if (exactMatch) return exactMatch.answer;
+
+            // Buscar coincidencia parcial si no hay coincidencia exacta
+            const partialMatch = jsonData.find(item =>
+                item.question.toLowerCase().trim().includes(normalizedQuery) ||
+                normalizedQuery.includes(item.question.toLowerCase().trim())
+            );
+            if (partialMatch) return partialMatch.answer;
+
+            return null;
+        }
+        // Event Listeners
+        $openChat.addEventListener('click', () => {
+            $chatbot.classList.remove('hidden', 'opacity-0', 'translate-y-5')
+            $openChat.classList.add('hidden')
+            initializeChatbot()
+        })
+
+        $closeChat.addEventListener('click', () => {
+            $chatbot.classList.add('hidden', 'opacity-0', 'translate-y-5')
+            $openChat.classList.remove('hidden')
+        })
+
+        $sendMessage.addEventListener('click', sendMessage)
+        $chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage()
+        })
+
+        $selectedModelDiv.addEventListener('click', changeModel)
+
+    </script>
+
+    <!-- Script para la funcionalidad de los botones del chatbot -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Elementos del DOM
+            const openChatBtn = document.getElementById('open-chat');
+            const closeChatBtn = document.getElementById('close-chat');
+            const chatbot = document.getElementById('chatbot');
+            const chatInput = document.getElementById('chat-input');
+            const sendMessageBtn = document.getElementById('send-message');
+            const voiceInputBtn = document.getElementById('voice-input');
+            const recordingIndicator = document.getElementById('recording-indicator');
+
+            // Variables para el reconocimiento de voz
+            let recognition = null;
+            let isRecording = false;
+
+            // Inicializar el reconocimiento de voz
+            function initializeSpeechRecognition() {
+                if ('webkitSpeechRecognition' in window) {
+                    recognition = new webkitSpeechRecognition();
+                    recognition.continuous = false;
+                    recognition.interimResults = false;
+                    recognition.lang = 'es-ES'; // Configura el idioma según necesites
+
+                    // Configurar eventos del reconocimiento de voz
+                    recognition.onstart = function () {
+                        isRecording = true;
+                        voiceInputBtn.innerHTML = '<i class="fas fa-stop text-red-500"></i>';
+                        recordingIndicator.classList.remove('hidden');
+                        chatInput.placeholder = 'Escuchando...';
+                    };
+
+                    recognition.onend = function () {
+                        isRecording = false;
+                        voiceInputBtn.innerHTML = '<i class="fas fa-microphone"></i>';
+                        recordingIndicator.classList.add('hidden');
+                        chatInput.placeholder = 'Escribe tu mensaje...';
+                    };
+
+                    recognition.onresult = function (event) {
+                        const transcript = event.results[0][0].transcript;
+                        chatInput.value = transcript;
+                        // Habilitar el botón de enviar si hay texto
+                        sendMessageBtn.disabled = !chatInput.value.trim();
+                    };
+
+                    recognition.onerror = function (event) {
+                        console.error('Error en el reconocimiento de voz:', event.error);
+                        stopRecording();
+                        // Mostrar mensaje de error al usuario
+                        showErrorToast('Error en el reconocimiento de voz. Por favor, intenta de nuevo.');
+                    };
+                } else {
+                    voiceInputBtn.style.display = 'none';
+                    showErrorToast('Tu navegador no soporta el reconocimiento de voz.');
+                }
+            }
+
+            // Función para mostrar mensajes de error
+            function showErrorToast(message) {
+                // Implementa tu propio sistema de notificaciones aquí
+                console.error(message);
+            }
+
+            // Función para iniciar/detener la grabación
+            function toggleRecording() {
+                if (!recognition) {
+                    initializeSpeechRecognition();
+                }
+
+                if (isRecording) {
+                    stopRecording();
+                } else {
+                    startRecording();
+                }
+            }
+
+            function startRecording() {
+                try {
+                    recognition.start();
+                } catch (error) {
+                    console.error('Error al iniciar la grabación:', error);
+                }
+            }
+
+            function stopRecording() {
+                try {
+                    recognition.stop();
+                } catch (error) {
+                    console.error('Error al detener la grabación:', error);
+                }
+            }
+
+            // Event Listeners
+            voiceInputBtn.addEventListener('click', toggleRecording);
+
+            // Funcionalidad del chat
+            openChatBtn.addEventListener('click', () => {
+                chatbot.classList.remove('hidden');
+                setTimeout(() => {
+                    chatbot.classList.remove('opacity-0', 'translate-y-5');
+                }, 50);
+            });
+
+            closeChatBtn.addEventListener('click', () => {
+                chatbot.classList.add('opacity-0', 'translate-y-5');
+                setTimeout(() => {
+                    chatbot.classList.add('hidden');
+                }, 300);
+                // Detener la grabación si está activa
+                if (isRecording) {
+                    stopRecording();
+                }
+            });
+
+            // Habilitar/deshabilitar botón de enviar según el contenido del input
+            chatInput.addEventListener('input', function () {
+                sendMessageBtn.disabled = !this.value.trim();
+            });
+
+            // Manejar el envío de mensajes
+            function handleSendMessage() {
+                const message = chatInput.value.trim();
+                if (message) {
+                    // Aquí va tu lógica para enviar el mensaje
+                    console.log('Mensaje enviado:', message);
+                    chatInput.value = '';
+                    sendMessageBtn.disabled = true;
+                }
+            }
+
+            sendMessageBtn.addEventListener('click', handleSendMessage);
+            chatInput.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    handleSendMessage();
+                }
+            });
+
+            // Inicializar el reconocimiento de voz al cargar
+            initializeSpeechRecognition();
+        });
+    </script>
+
+    <!-- Script para la funcionalidad del selector de emojis -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const emojiButton = document.getElementById('emoji-button');
+            const emojiPicker = document.getElementById('emoji-picker');
+            const closeEmoji = document.getElementById('close-emoji');
+            const chatInput = document.getElementById('chat-input');
+
+            // Mostrar/ocultar el selector de emojis
+            emojiButton.addEventListener('click', () => {
+                emojiPicker.classList.toggle('hidden');
+            });
+
+            // Cerrar el selector de emojis
+            closeEmoji.addEventListener('click', () => {
+                emojiPicker.classList.add('hidden');
+            });
+
+            // Añadir emoji al input cuando se selecciona
+            const emojiButtons = emojiPicker.querySelectorAll('.grid button');
+            emojiButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const emoji = button.textContent;
+                    const cursorPos = chatInput.selectionStart;
+                    const textBefore = chatInput.value.substring(0, cursorPos);
+                    const textAfter = chatInput.value.substring(cursorPos);
+                    chatInput.value = textBefore + emoji + textAfter;
+                    chatInput.focus();
+                    // Mover el cursor después del emoji insertado
+                    const newCursorPos = cursorPos + emoji.length;
+                    chatInput.setSelectionRange(newCursorPos, newCursorPos);
+                });
+            });
+
+            // Cerrar el selector de emojis al hacer clic fuera
+            document.addEventListener('click', (e) => {
+                if (!emojiPicker.contains(e.target) && !emojiButton.contains(e.target)) {
+                    emojiPicker.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+
+    <!-- Script para la funcionalidad del ir arriba y abajo dentro del ChatBot -->
+    <script>
+        // Boton de ir arriba ene l ChatBot
+        document.addEventListener('DOMContentLoaded', function () {
+            const chatMessages = document.getElementById('chat-messages');
+            const scrollButton = document.getElementById('scroll-button');
+            const scrollIcon = document.getElementById('scroll-icon');
+
+            // Estado inicial
+            let isAtTop = true;
+
+            function updateScrollButton() {
+                isAtTop = chatMessages.scrollTop === 0;
+                if (isAtTop) {
+                    scrollIcon.classList.remove('fa-chevron-up');
+                    scrollIcon.classList.add('fa-chevron-down');
+                } else {
+                    scrollIcon.classList.remove('fa-chevron-down');
+                    scrollIcon.classList.add('fa-chevron-up');
+                }
+            }
+
+            function handleScrollClick() {
+                if (isAtTop) {
+                    // Scroll suave hacia abajo
+                    chatMessages.scrollTo({
+                        top: chatMessages.scrollHeight,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    // Scroll suave hacia arriba
+                    chatMessages.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+
+            // Event listeners
+            chatMessages.addEventListener('scroll', updateScrollButton);
+            scrollButton.addEventListener('click', handleScrollClick);
+
+            // Inicializar estado del botón
+            updateScrollButton();
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+  window.addEventListener("scroll", function () {
+    var goTopBtn = document.getElementById("goTopBtn");
+    if (window.scrollY > 100) {
+      goTopBtn.classList.remove("translate-y-20");
+      goTopBtn.classList.remove("opacity-0");
+      goTopBtn.classList.add("translate-y-0");
+      goTopBtn.classList.add("opacity-100");
+    } else {
+      goTopBtn.classList.add("translate-y-20");
+      goTopBtn.classList.add("opacity-0");
+      goTopBtn.classList.remove("translate-y-0");
+      goTopBtn.classList.remove("opacity-100");
+    }
+  });
+
+  document.getElementById("goTopBtn").addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});
+
+function toggleMobileMenu() {
+  const mobileMenu = document.getElementById("mobile-menu");
+  const menuIcon = document
+    .getElementById("mobile-menu-toggle")
+    .querySelector("svg");
+
+  // Toggle visibility
+  mobileMenu.classList.toggle("hidden");
+
+  // Check if menu is now visible
+  if (!mobileMenu.classList.contains("hidden")) {
+    // Menu is open - change to close (X) icon
+    menuIcon.innerHTML = `
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        `;
+  } else {
+    // Menu is closed - change back to hamburger icon
+    menuIcon.innerHTML = `
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+        `;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+
+  // Ensure the button exists before adding the event listener
+  if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener("click", toggleMobileMenu);
+  }
+});
+
+const button = document.getElementById("dropdownDefaultButton");
+const dropdown = document.getElementById("dropdown");
+
+button.addEventListener("click", () => {
+  dropdown.classList.toggle("show");
+});
+
+// Cerrar el dropdown si se hace clic fuera de él
+document.addEventListener("click", (event) => {
+  if (!button.contains(event.target) && !dropdown.contains(event.target)) {
+    dropdown.classList.remove("show");
+  }
+});
+
+// Funciones para controlar el zoom
+let currentZoom = 100;
+
+function changeZoom(direction) {
+  if (direction === "in") {
+    currentZoom += 10;
+  } else if (direction === "out") {
+    currentZoom -= 10;
+  }
+  currentZoom = Math.max(50, Math.min(currentZoom, 200)); // Limitar entre 50% y 200%
+  document.body.style.zoom = `${currentZoom}%`;
+}
+
+function resetZoom() {
+  currentZoom = 100;
+  document.body.style.zoom = "100%";
+}
+
+// Array de fuentes disponibles, incluyendo la fuente por defecto
+const fonts = [
+  "Quicksand",
+  "Arial",
+  "Verdana",
+  "Georgia",
+  "Times New Roman",
+  "Courier New",
+];
+let currentFontIndex = 0;
+
+// Función para cambiar la tipografía
+function changeFont() {
+  currentFontIndex = (currentFontIndex + 1) % fonts.length;
+  const newFont = fonts[currentFontIndex];
+
+  // Aplicar la nueva fuente
+  document.body.style.fontFamily = newFont;
+
+  // Actualizar el texto del botón para mostrar la fuente actual
+  updateFontDisplay(newFont);
+
+  // Guardar la fuente seleccionada en localStorage
+  localStorage.setItem("selectedFont", newFont);
+}
+
+// Función para actualizar el texto mostrado
+function updateFontDisplay(fontName) {
+  const fontDisplay = document.querySelector(".current-font-name");
+  if (fontDisplay) {
+    fontDisplay.textContent = fontName;
+  }
+}
+
+// Al cargar la página, aplicar la fuente guardada si existe
+document.addEventListener("DOMContentLoaded", function () {
+  const savedFont = localStorage.getItem("selectedFont");
+  if (savedFont) {
+    document.body.style.fontFamily = savedFont;
+    currentFontIndex = fonts.indexOf(savedFont);
+    if (currentFontIndex === -1) currentFontIndex = 0;
+
+    // Actualizar el texto mostrado con la fuente actual
+    updateFontDisplay(savedFont);
+  } else {
+    // Si no hay fuente guardada, mostrar la fuente por defecto
+    updateFontDisplay(fonts[0]);
+  }
+});
+
+function toggleTextToSpeech() {
+  // Si hay una lectura en curso, detenerla
+  if (window.speechSynthesis.speaking) {
+    window.speechSynthesis.cancel();
+    return;
+  }
+
+  // Obtener todo el texto visible de la página
+  const text = document.body.innerText;
+
+  // Crear el objeto de voz
+  const utterance = new SpeechSynthesisUtterance(text);
+
+  // Configurar en español
+  utterance.lang = "es-ES";
+
+  // Iniciar la lectura
+  window.speechSynthesis.speak(utterance);
+}
+
+// Variables para el ajuste de tamaño de fuente
+let currentFontSize = 100;
+const fontSizeStep = 10;
+const minFontSize = 80;
+const maxFontSize = 200;
+
+// Función para cambiar el tamaño de la fuente
+function changeFontSize(action) {
+  if (action === "increase" && currentFontSize < maxFontSize) {
+    currentFontSize += fontSizeStep;
+  } else if (action === "decrease" && currentFontSize > minFontSize) {
+    currentFontSize -= fontSizeStep;
+  }
+  document.body.style.fontSize = `${currentFontSize}%`;
+}
+
+// Función para resetear el tamaño de la fuente
+function resetFontSize() {
+  currentFontSize = 100;
+  document.body.style.fontSize = "100%";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cookieConsent = document.getElementById("cookies-consent");
+  const cookieCard = document.getElementById("cookie-card");
+  const closeBtn = document.getElementById("close-btn");
+  const acceptAll = document.getElementById("accept-all");
+  const rejectAll = document.getElementById("reject-all");
+  const manageCookies = document.getElementById("manage-cookies");
+
+  // Función para cerrar el consentimiento de cookies
+  function closeCookieConsent() {
+    cookieCard.style.animation = "slide-out-bottom 0.5s ease-in forwards";
+    setTimeout(() => {
+      cookieConsent.style.display = "none";
+    }, 500);
+  }
+
+  // Animación inicial de entrada
+  cookieCard.style.animation = "slide-in-bottom 0.5s ease-out";
+
+  // Listeners para todos los botones
+  closeBtn.addEventListener("click", closeCookieConsent);
+  acceptAll.addEventListener("click", closeCookieConsent);
+  rejectAll.addEventListener("click", closeCookieConsent);
+  manageCookies.addEventListener("click", closeCookieConsent);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const fullscreenToggle = document.getElementById("fullscreen-toggle");
+  const fullscreenIcon = document.getElementById("fullscreen-icon");
+
+  // Fullscreen Toggle
+  fullscreenToggle.addEventListener("click", () => {
+    if (!document.fullscreenElement) {
+      if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+        fullscreenIcon.classList.replace("fa-expand", "fa-compress");
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+        fullscreenIcon.classList.replace("fa-compress", "fa-expand");
+      }
+    }
+  });
+});
+
+// Función para obtener todas las imágenes del sitio con categorías
+function getAllImages() {
+  return [
+      // Patio
+      { src: 'static/img/patio_1.jpeg', category: 'escuela' },
+      { src: 'static/img/patio_2.jpeg', category: 'escuela' },
+      { src: 'static/img/patio_3.jpeg', category: 'escuela' },
+      { src: 'static/img/patio_4.jpeg', category: 'escuela' },
+      { src: 'static/img/patio_5.jpeg', category: 'escuela' },
+      { src: 'static/img/patio_6.jpeg', category: 'escuela' },
+      { src: 'static/img/patio_7.jpeg', category: 'escuela' },
+
+      // Especialidades
+      { src: 'static/img/especialidad_1.jpeg', category: 'especialidades' },
+      { src: 'static/img/especialidad_2.jpeg', category: 'especialidades' },
+      { src: 'static/img/especialidad_3.jpeg', category: 'especialidades' },
+
+      // Viajes Escolares
+      { src: 'static/img/viaje_1.jpeg', category: 'viajes-escolares' },
+      { src: 'static/img/viaje_2.jpeg', category: 'viajes-escolares' },
+      { src: 'static/img/viaje_3.jpeg', category: 'viajes-escolares' },
+      { src: 'static/img/viaje_4.jpeg', category: 'viajes-escolares' },
+      { src: 'static/img/viaje_5.jpeg', category: 'viajes-escolares' },
+      { src: 'static/img/viaje_6.jpeg', category: 'viajes-escolares' },
+      { src: 'static/img/viaje_7.jpeg', category: 'viajes-escolares' },
+      { src: 'static/img/viaje_8.jpeg', category: 'viajes-escolares' },
+      { src: 'static/img/viaje_9.jpeg', category: 'viajes-escolares' },
+
+      // Deportes
+      { src: 'static/img/evento_1.jpeg', category: 'eventos' },
+      { src: 'static/img/evento_2.jpeg', category: 'eventos' },
+      { src: 'static/img/evento_3.jpeg', category: 'eventos' },
+      { src: 'static/img/evento_4.jpeg', category: 'eventos' },
+      { src: 'static/img/evento_5.jpeg', category: 'eventos' },
+      { src: 'static/img/evento_6.jpeg', category: 'eventos' },
+      { src: 'static/img/evento_7.jpeg', category: 'eventos' },
+      { src: 'static/img/evento_8.jpeg', category: 'eventos' },
+
+  ].sort(() => Math.random() - 0.5);
+}
+
+// Función para crear un diseño de galería con animación
+function createMasonryGallery(images = getAllImages()) {
+  const gallery = document.getElementById('gallery-grid');
+
+  // Añadir clases de transición
+  gallery.classList.add('transition-all', 'duration-500', 'ease-in-out');
+
+  // Limpiar la galería actual con animación de desvanecimiento
+  gallery.style.opacity = '0';
+  
+  // Usar setTimeout para crear efecto de transición
+  setTimeout(() => {
+      // Limpiar contenido
+      gallery.innerHTML = '';
+
+      // Modificar clases para un diseño más dinámico
+      gallery.className = 'grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 transition-all duration-500 ease-in-out';
+
+      images.forEach((image, index) => {
+          // Crear contenedor para cada imagen con animación de entrada
+          const itemDiv = document.createElement('div');
+          itemDiv.className = 'gallery-item relative group overflow-hidden rounded-lg transform transition-all duration-500 ease-in-out opacity-0 scale-95';
+          itemDiv.setAttribute('data-category', image.category);
+
+          // Crear imagen
+          const img = document.createElement('img');
+          img.src = image.src;
+          img.alt = `Imagen ${index + 1}`;
+          img.className = 'w-full h-48 md:h-64 object-cover transition-transform duration-300 group-hover:scale-110';
+
+          // Agregar imagen al contenedor
+          itemDiv.appendChild(img);
+
+          // Agregar contenedor a la galería
+          gallery.appendChild(itemDiv);
+
+          // Pequeño retraso para animación de entrada
+          setTimeout(() => {
+              itemDiv.classList.remove('opacity-0', 'scale-95');
+              itemDiv.classList.add('opacity-100', 'scale-100');
+          }, index * 100);
+      });
+
+      // Mostrar galería
+      gallery.style.opacity = '1';
+  }, 300);
+}
+
+// Función de filtrado
+function setupFilterButtons() {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const allImages = getAllImages();
+
+  filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+          const filter = button.getAttribute('data-filter');
+          
+          // Restablecer estilos de botones
+          filterButtons.forEach(btn => {
+              btn.classList.remove('text-blue-700', 'bg-blue-700', 'text-white', 'dark:text-white', 'dark:bg-blue-500');
+              btn.classList.add('text-gray-900', 'bg-white', 'dark:text-white', 'dark:bg-gray-900');
+          });
+          
+          // Aplicar estilo al botón seleccionado
+          button.classList.remove('text-gray-900', 'bg-white', 'dark:text-white', 'dark:bg-gray-900');
+          button.classList.add('text-blue-700', 'bg-blue-700', 'text-white', 'dark:text-white', 'dark:bg-blue-500');
+
+          // Filtrar imágenes
+          if (filter === 'all') {
+              createMasonryGallery(); // Mostrar todas las imágenes
+          } else {
+              const filteredImages = allImages.filter(image => 
+                  image.category === filter
+              );
+              createMasonryGallery(filteredImages);
+          }
+      });
+  });
+}
+
+// Ejecutar al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+  createMasonryGallery();
+  setupFilterButtons();
+});
+
+// Añadir estilos adicionales para transiciones suaves
+const style = document.createElement('style');
+style.textContent = `
+  .gallery-item {
+      transition: all 0.5s ease-in-out;
+  }
+`;
+document.head.appendChild(style);
+
+// Función para ocultar la pantalla de carga
+function hideLoadingScreen() {
+  const loadingScreen = document.getElementById("loading-screen");
+  const mainContent = document.getElementById("main-content");
+
+  loadingScreen.classList.add("hidden");
+  mainContent.classList.remove("hidden");
+}
+
+// Esperar a que todos los recursos se carguen
+window.addEventListener("load", hideLoadingScreen);
+
+// Opcional: Ocultar después de 3 segundos si algo falla
+setTimeout(hideLoadingScreen, 3000);
+
+function previewImage(event) {
+  const input = event.target;
+  const preview = document.getElementById("imagePreview");
+
+  if (input.files && input.files[0]) {
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+      preview.src = e.target.result;
+      preview.classList.remove("hidden");
+    };
+
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+// Modal functionality
+const aboutUsLink = document.getElementById("aboutUsLink");
+const modal = document.getElementById("aboutUsModal");
+const closeModalButtons = [
+  document.getElementById("closeModal"),
+  document.getElementById("closeModalFooter"),
+];
+
+// Open modal
+aboutUsLink.addEventListener("click", function (e) {
+  e.preventDefault();
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
+});
+
+// Close modal functions
+closeModalButtons.forEach((button) => {
+  button.addEventListener("click", function () {
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+  });
+});
+
+// Close modal when clicking outside
+modal.addEventListener("click", function (e) {
+  if (e.target === modal) {
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+  }
+});
+
+    </script>
+
+</body>
+<script src="/static/js/main.js"></script>
+
+</html>
